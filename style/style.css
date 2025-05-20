@@ -1,0 +1,603 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: aqua;
+}
+
+header {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px 0 grey;
+    border-bottom: 1px solid grey;
+    position: sticky;
+    top: 0;
+}
+
+header .brand {
+    font-weight: 700;
+    cursor: pointer;
+}
+
+header .menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
+
+    button {
+        background-color: inherit;
+        color: black;
+        outline: none;
+        border: none;
+    }
+}
+
+header .menu img {
+    cursor: pointer;
+}
+
+header .menu-link {
+    background-color: white;
+    padding: 4px 4px 0 4px;
+    position: absolute;
+    box-shadow: 0 4px 8px 0 grey;
+    border-radius: 4px;
+    width: 15rem;
+    right: 1%;
+
+    a {
+        text-decoration: none;
+        color: black;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: start;
+        gap: 10px;
+    }
+}
+
+header .menu-link ul li {
+    list-style-type: none;
+    border-bottom: 1px solid grey;
+    padding: 10px;
+}
+
+/* nav styling */
+
+nav {
+    width: 13rem;
+    height: 100%;
+    background-color: white;
+    position: fixed;
+    border: 1px solid grey;
+    display: flex;
+    flex-direction: column;
+    transition: 1s;
+    user-select: none;
+}
+
+.small-media-width {
+    display: none;
+}
+
+nav .dash .small-media-width {
+    display: none;
+}
+
+nav .dash {
+    border-bottom: 1px solid grey;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    font-weight: 600;
+
+    .a {
+        padding: 18px;
+        text-decoration: none;
+        color: black;
+        gap: 10px;
+        display: flex;
+        justify-content: center;
+
+        span {
+            transition: 1.5s;
+        }
+    }
+}
+
+nav .nav-links ul li {
+    padding: 10px;
+    list-style-type: none;
+    border-bottom: 1px solid grey;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+
+    img {
+        cursor: pointer;
+    }
+}
+
+nav .nav-links ul li button,
+nav .dash button {
+    border: none;
+    outline: none;
+    color: black;
+    background-color: inherit;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 1.5s;
+}
+
+
+nav .nav-links ul li a,
+nav .nav-links ul li .link-container,
+nav .nav-links ul li a span {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    margin-left: 8px;
+    transition: 1s;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: start;
+    cursor: pointer;
+    transition: 1.5s;
+}
+
+nav .nav-links ul li a .link-container {
+    margin-left: 1px;
+}
+
+nav .nav-links ul li a:hover,
+nav .nav-links ul li .link-container:hover {
+    margin-left: 13px;
+    font-weight: 700;
+}
+
+.nav-links ul li .btn-arrow img {
+    transition: 1s;
+}
+
+.nav-links ul li .btn-arrow img:hover {
+    transform: rotate(180deg);
+}
+
+.nav-links ul li .btn-arrow-active img {
+    transform: rotate(180deg);
+}
+
+nav .nav-links ul li .link-container,
+nav .dash a {
+
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 7px;
+    transition: 1.5s;
+}
+
+nav .nav-links a .active {
+    background-color: blue;
+}
+
+/* nav sub Menu */
+nav .nav-links .btn-submenu {
+    background-color: aqua;
+    width: 100%;
+    box-shadow: inset #6e749b2b 10px 10px 6px 2px;
+    display: none;
+}
+
+
+nav .nav-links .btn-submenu-active {
+    display: block;
+}
+
+nav .nav-links .btn-submenu ul li {
+    padding: 7px;
+}
+
+nav .nav-links .btn-submenu ul li a {
+    font-weight: 300;
+    margin-left: 2rem;
+}
+
+/* nav behaviour */
+.nav-menu-link {
+    width: 4rem;
+    transition: 1.5s;
+}
+
+.nav-menu-link .nav-links ul li .link-container button,
+.nav-menu-link .nav-links ul li span,
+.nav-menu-link .dash .a span {
+    font-size: 0px;
+    transition: 1.5s;
+}
+
+.nav-menu-link .nav-links ul li .btn-arrow img,
+.nav-menu-link .dash button {
+    display: none;
+    transition: 1.5s;
+}
+
+.nav-menu-link .nav-links .btn-submenu ul li a {
+    margin-left: 1rem;
+}
+
+.nav-menu-link .nav-links .btn-submenu ul li span {
+    font-size: 0px;
+    transition: 1.5s;
+}
+
+/* Main styling */
+main {
+    padding: 20px;
+    margin-left: 13rem;
+    background-color: aliceblue;
+    transition: 1.5s;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    border-radius: 10px;
+}
+
+.main-container .boxes {
+    display: flex;
+    flex-direction: column;
+    background-color: #6e749b2b;
+}
+
+.main-container .boxes h3 {
+    background-color: white;
+    padding: 10px;
+    color: rgb(27, 27, 27);
+    font-weight: 600;
+    border: 2px solid #6e749b2b;
+    font-size: 18px;
+}
+
+.main-container .boxes .boxes-box {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-radius: 5px;
+    height: 100%;
+    align-items: center;
+}
+
+.main-container .boxes .box {
+    background-color: blue;
+    padding: 15px;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    gap: 12px;
+    font-weight: 500;
+    width: 15rem;
+    cursor: pointer;
+}
+
+.main-container .boxes .box .details {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    row-gap: 15px;
+
+    p {
+        color: white;
+    }
+    .count{
+        padding: 5px;
+        border-top: 1px solid grey;
+        font-weight: 600;
+
+    }
+}
+
+
+.main-container .list-container {
+    background-color: beige;
+    border-radius: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid grey;
+    border-radius: 5px;
+    background-color: whitesmoke;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 8px;
+    cursor: pointer;
+    border-bottom: 1px solid grey;
+}
+table tr{
+    transition: 1s ease all;
+}
+table tr:hover {
+    background-color: rgb(194, 194, 194);
+}
+
+table td .table-button {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+table td button {
+    outline: none;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+}
+table td .pending {
+    background-color: blue;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 15px;
+}
+
+table td .active {
+    background-color: green;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 15px;
+}
+
+table td .inactive {
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 15px;
+}
+
+
+/* footer styling */
+footer {
+    padding: 20px;
+    margin-left: 13rem;
+    text-align: center;
+    background-color: gray;
+    transition: 1.5s;
+    position: fixed;
+    bottom: 100%;
+}
+
+/* url container */
+main .url {
+    width: 100%;
+    padding: 25px;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+
+    a {
+        color: red;
+        text-decoration: none;
+        font-weight: 700;
+    }
+
+    h3 {
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    button {
+        background-color: rgb(3, 205, 255);
+        color: black;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+}
+
+.search-container {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: whitesmoke;
+    border: 1px solid rgb(179, 178, 178);
+
+    .search {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 10px;
+        text-align: center;
+
+        button {
+            background-color: green;
+            color: white;
+            outline: none;
+            border: none;
+            padding: 7px;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+    }
+
+    .row {
+        font-size: 14px;
+        display: block;
+        font-weight: 600;
+
+        select {
+            border: 2px solid green;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 4px;
+        }
+    }
+
+    input {
+        border: green 2px solid;
+        outline: none;
+        border-radius: 4px;
+        padding: 3px;
+    }
+}
+
+/* Forms Design for popover-open */
+.container-form-product{
+    display: none;
+}
+.container-form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* dimmed overlay */
+    display: grid;
+     place-items: center;
+     transition: 1s;
+}
+.form-container {
+    place-self: center;
+    background-color: #ddd;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.form-container .head,
+.select {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 10px;
+
+    button {
+        border: none;
+        background-color: inherit;
+        cursor: pointer;
+    }
+}
+.form-container .head{
+    border-bottom: 1px solid grey;
+}
+
+.form-container form .form-inputs {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 4px;
+    padding: 10px;
+}
+
+.form-container form .select {
+    gap: 30px;
+}
+
+form input {
+    padding: 7px;
+    height: 38px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+form input:focus{
+    border: #007bff solid 1px;
+}
+form span{
+    font-size: 13px;
+    color: red;
+}
+form .select-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5px;
+
+    select {
+        width: 10rem;
+    }
+}
+
+form select {
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+
+}
+form .button-container {
+    padding: 10px 30px 10px 30px;
+}
+
+form button {
+    padding: 10px;
+    width: 100%;
+    height: 38px;
+    background-color: #007bff;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+form .file{
+   padding: 10px;
+   background-color: aliceblue;
+}
+
+.container-form .brands{
+    width: 25rem;
+}
+
+.msg-success, .msg-error{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    color: white;
+    font-weight: 400;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+.msg-error{
+    background-color: tomato;
+}
+.msg-success{
+    background-color: rgb(42, 128, 42);
+}

@@ -1,0 +1,108 @@
+@media only screen and (max-width: 600px) {
+
+    main {
+        padding: 10px;
+        margin-left: 4rem;
+        background-color: aliceblue;
+        transition: 1.5s;
+    }
+
+    footer {
+        padding: 10px;
+        margin-left: 4rem;
+        text-align: center;
+        background-color: green;
+        transition: 1.5s;
+    }
+
+    .main-container .boxes h3 {
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    .main-container .boxes {
+        width: 100%;
+    }
+
+    .main-container .boxes .box {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .table-container {
+        overflow-x: auto;
+        width: 100%;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    th,
+    td {
+        text-align: left;
+        padding: 7px;
+    }
+
+
+    .small-media-width {
+        display: block;
+    }
+
+    nav .dash .small-media-width {
+        display: none;
+    }
+
+    .large-media-width {
+        display: none;
+    }
+
+    nav .dash .large-media-width {
+        visibility: hidden;
+    }
+
+    nav {
+        width: 4rem;
+        font-size: 0px;
+    }
+
+    nav .nav-links ul li .link-container button,
+    nav .nav-links ul li span,
+    nav .dash .a span {
+        font-size: 0px;
+        transition: 1.5s;
+    }
+
+    nav .nav-links ul li .btn-arrow img,
+    nav .dash button {
+        display: none;
+        transition: 1.5s;
+    }
+
+
+    .nav-menu-link {
+        display: flex;
+        width: 13rem;
+        font-size: 16px;
+        transition: 1.5s;
+    }
+
+    .nav-menu-link .nav-links ul li .link-container button,
+    .nav-menu-link .nav-links ul li span,
+    .nav-menu-link .dash .a span {
+        display: flex;
+        font-size: 15px;
+        transition: 1.5s;
+    }
+
+    .nav-menu-link .nav-links ul li .btn-arrow img,
+    .nav-menu-link .dash button {
+        display: block;
+        transition: 1.5s;
+    }
+
+    .nav-menu-link .nav-links .btn-submenu ul li span {
+        font-size: 15px;
+        transition: 1.5s;
+    }
+}

@@ -1,0 +1,112 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: aqua;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: grid;
+}
+
+.container-form {
+    place-self: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: aliceblue;
+    padding: 20px;
+    border-radius: 4px;
+    gap: 10px;
+    box-shadow:  inset #6e749b2b 5px 5px 6px 2px ;
+}
+.container-form .head{
+    padding: 10px;
+    margin: auto;
+    text-align: center;
+    width: 20rem;
+}
+.container-form .head h3{
+    font-size: 25px;
+}
+.container-form .head p{
+    font-size: 18px;
+}
+.container-form .form {
+    background: linear-gradient(to bottom, aqua, rgb(7, 235, 235) );
+    padding: 10px;
+    width: 25rem;
+}
+
+.container-form .form h3 {
+    padding: 10px;
+    font: 400;
+}
+
+.container-form .form .form-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 10px;
+}
+.container-form .form .form-content label{
+    padding: 8px;
+}
+
+.container-form .form .form-content input {
+    padding: 10px;
+    height: 35px;
+    outline: none;
+    border-radius: 3px;
+    width: 100%;
+    border: none;
+}
+.container-form .form .check-box label{
+    margin-left: 20px;
+    padding: 10px;
+    cursor: pointer;
+}
+.container-form .form .button-container{
+    padding: 10px;
+}
+.container-form .form button{
+    width: 100%;
+    height: 34px;
+    margin-top:  auto;
+    color: white;
+    font-weight: 600;
+    background-color: blue;
+    border: none;
+    border-radius: 4px;
+    transition: 1.5s;
+    cursor: pointer;
+}
+.container-form .form button:hover{
+    background-color: rgb(55, 55, 243);
+}
+.msg{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    color: white;
+    font-weight: 400;
+    background-color: rgb(223, 0, 0);
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+@media only screen and (max-width: 790px) {
+    .container-form .head{
+        width: 100%;
+    }
+    .container-form .form {
+        width: 100%;
+    }
+}
