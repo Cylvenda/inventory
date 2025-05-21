@@ -44,11 +44,6 @@
                                 <span class="form-error" id="form-error-phone"></span>
                             </div>
 
-                            <div class="form-inputs">
-                                <label for="phone">Password:</label>
-                                <input type="password" name="password" id="password" placeholder="Enter users Password">
-                                <span class="form-error" id="form-error-password"></span>
-                            </div>
 
                             <div class="form-inputs">
                                 <label for="status">Status:</label>

@@ -33,11 +33,6 @@
                                 <input type="file" id="img" name="img" class="file">
                                 <span class="form-error" id="form-error-img"></span>
                             </div>
-                            <div class="form-inputs">
-                                <label for="product-name">Product Name:</label>
-                                <input type="text" id="product-name" name="product" placeholder="Enter Product Name..">
-                                <span class="form-error" id="form-error-name"></span>
-                            </div>
                             <div class="select">
                                 <div class="select-item">
                                     <label for="brand">Select Brand:</label>
@@ -46,6 +41,7 @@
                                     </select>
                                     <span class="form-error" id="form-error-brand"></span>
                                 </div>
+
                                 <div class="select-item">
                                     <label for="category">Select Category:</label>
                                     <select id="category" name="category" required>
@@ -53,6 +49,7 @@
                                     </select>
                                     <span class="form-error" id="form-error-category"></span>
                                 </div>
+
 
                                 <div class="select-item">
                                     <label for="status">Status:</label>
@@ -62,6 +59,12 @@
                                     </select>
                                     <span class="form-error" id="form-error-status"></span>
                                 </div>
+                            </div>
+
+                            <div class="form-inputs">
+                                <label for="product-name">Product Name:</label>
+                                <input type="text" id="product-name" name="product" placeholder="Enter Product Name..">
+                                <span class="form-error" id="form-error-name"></span>
                             </div>
                             <div class="form-inputs">
                                 <label for="qty">Enter Quantity:</label>

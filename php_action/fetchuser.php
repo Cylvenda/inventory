@@ -1,7 +1,7 @@
 <?php include '../Config/conn.php';
 header('Content-Type: application/json');
 
-$sql = mysqli_query($conn, " SELECT * FROM users ");
+$sql = mysqli_query($conn, " SELECT * FROM employee ");
 if (mysqli_num_rows($sql) > 0) {
         $users = [];
         while ($row = $sql->fetch_assoc()) {
@@ -10,7 +10,7 @@ if (mysqli_num_rows($sql) > 0) {
 
         echo json_encode(["users" => $users]);
     } else {
-        echo json_encode(["error" => "Failed to fetch User"]);
+        echo json_encode(["error" => "Failed to fetch Employee"]);
     }
     $conn->close();
 

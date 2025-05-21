@@ -3,7 +3,7 @@ require_once '../Config/conn.php';
 header('Content-Type: application/json');
 
 
-$query = "SELECT * FROM orders";
+$query = "SELECT * FROM placed_orders";
 $stmt = $conn->prepare($query);
 $stmt->execute();
 

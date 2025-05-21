@@ -7,7 +7,7 @@ function user_login($conn, $email, $password) {
         header('Location: ../');
         exit();
     }else{
-        $sql = "SELECT * FROM users WHERE email = ? ";
+        $sql = "SELECT * FROM employee WHERE email = ? ";
         $stmt = $conn -> prepare($sql);
         $stmt -> bind_param("s", $email);
         $stmt -> execute();
@@ -19,13 +19,13 @@ function user_login($conn, $email, $password) {
             if(password_verify($password, $row["password"])){
                 if($row['status'] == 1){
                     if($row['role'] == 1){
-                        $_SESSION['user_id'] = $row['user_id'];
+                        $_SESSION['user_id'] = $row['employee_id'];
                         $_SESSION['name'] = $row['name'];
                         $_SESSION['user_email'] = $row['email'];
                         header('Location: ../Home/Dashboard');
                         exit();
                     }else{
-                        $_SESSION['user_id'] = $row['user_id'];
+                        $_SESSION['user_id'] = $row['employee_id'];
                         $_SESSION['name'] = $row['name'];
                         $_SESSION['user_email'] = $row['email'];
                         header('Location: ../Home/Dashboard');

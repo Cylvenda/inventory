@@ -285,7 +285,7 @@ main {
 }
 
 .main-container .boxes .box {
-    background-color: blue;
+    background-color: whitesmoke;
     padding: 15px;
     border-radius: 3px;
     display: flex;
@@ -293,7 +293,7 @@ main {
     height: 100%;
     gap: 12px;
     font-weight: 500;
-    width: 15rem;
+    width: 16rem;
     cursor: pointer;
 }
 
@@ -305,7 +305,7 @@ main {
     row-gap: 15px;
 
     p {
-        color: white;
+        color: black;
     }
     .count{
         padding: 5px;

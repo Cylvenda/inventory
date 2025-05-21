@@ -89,6 +89,7 @@ INSERT INTO `categories` (`category_id`, `brand_id`, `name`, `status`, `date`) V
 CREATE TABLE IF NOT EXISTS `orders` (
   `order_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
+  `employee_id`  varchar(50) NOT NULL,
   `client_name` varchar(50) NOT NULL,
   `client_email` varchar(50) NOT NULL,
   `items` int(11) NOT NULL,
@@ -99,7 +100,6 @@ CREATE TABLE IF NOT EXISTS `orders` (
   KEY `product_id` (`product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
 -- RELATIONSHIPS FOR TABLE `orders`:
 --   `product_id`
 --       `products` -> `product_id`
@@ -164,8 +164,8 @@ CREATE TABLE IF NOT EXISTS `suppliers` (
 -- Table structure for table `users`
 --
 
-CREATE TABLE IF NOT EXISTS `users` (
-  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `employee` (
+  `employee-r_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(30) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(150) NOT NULL,

@@ -103,7 +103,7 @@
                         </tr>
 
                         <?php
-                        $sql = mysqli_query($conn, "SELECT * FROM orders ORDER BY order_id LIMIT 5 ");
+                        $sql = mysqli_query($conn, "SELECT * FROM placed_orders ORDER BY order_id LIMIT 5 ");
                         while ($row = mysqli_fetch_assoc($sql)) {
 
                             if ($row['status'] == 1) {
