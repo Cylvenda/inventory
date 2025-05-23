@@ -17,6 +17,7 @@
                 <button onclick="getForm()">Add New Brand</button>
             </span>
         </div>
+        <!-- brand add form -->
         <div class="container-form-product" id="product-form-product">
             <div class="container-form">
                 <div class="form-container">
@@ -45,6 +46,60 @@
                             </div>
                         </form>
                     </div>
+                </div>
+            </div>
+        </div>
+        <!-- update form  -->
+                <div class="container-form-product" id="update-form">
+            <div class="container-form">
+                <div class="form-container">
+                    <div class="brands">
+                        <div class="head">
+                            <h3>Edit Brand Name</h3>
+                            <button class="close-form-btn"><img src="../img/icons/close.svg" alt=""></button>
+                        </div>
+                        <div id="edit-msg" class="msg">
+
+                        </div>
+                        <form id="edit-brand-form">
+                            <div class="form-inputs">
+                                <input type="hidden" name="edit-brand_id" id="edit-brand_id">
+                                <label for="name">Brand Name:</label>
+                                <input id="edit-brand" type="text" name="brand" placeholder="Enter Brand Name..">
+                            </div>
+
+                            <div class="button-container">
+                                <button type="button" onclick="updateBrand()">Update Brand</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                            <!-- delete user model -->
+                <div class="container-form-product" id="delete-form">
+            <div class="container-form">
+                <div class="form-container user-form">
+                    <div class="head">
+                        <h3>Delete Product</h3>
+                        <button class="close-form-btn"><img src="../img/icons/close.svg" alt=""></button>
+                    </div>
+                    <div id="msg-edit"></div>
+                    <form id="user-form">
+                        <div class="brands">
+                            <div class="delete-container">
+                                <p>This Action will Remove all category and Product Originated from this Brand. <br>
+                                    Are You Sure You want to Delete this Brand...?.</p>
+                            </div>
+                            <div class="button-container">
+                                <div class="delete-button">
+                                    <button class="delete" type="button" onclick="deleteteUser()">Yes Delete</button>
+                                    <button type="button" class="close-form-btn">No Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

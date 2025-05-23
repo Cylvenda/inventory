@@ -1,6 +1,4 @@
 $(document).ready(() => {
-
-
     fetchProducts(); // calling the fetching product function  
     fetchProductsBrands(); // calling the fetching product brands function  
     fetchProductsCategory(); // calling the fetching product  details  function  (brands, category) for forms 
@@ -21,23 +19,25 @@ const fetchProducts = () => {
                     const formattedPrice = Number(product.price).toLocaleString('en-US', {
                         maximumFractionDigits: 0  // No decimal places
                     });
+
+                    product.payment_status == 1
                     count++;
                     tableRows += `
-                    <tr data-id="${product.id}">
-                    <td>${count}</td>
-                        <td><img src="../img/uploads/${product.image}" width="40" height="30" alt="${product.product_name}"></td>
+                    <tr >
+                        <td>${count}</td>
+                         <td><img src="../img/uploads/${product.image}" width="50" height="50" alt="${product.product_name}"></td>
                         <td>${product.product_name}</td>
                         <td>${product.brand_name}</td>
                         <td>${product.category_name}</td>
                         <td>${formattedPrice}</td>
                         <td>${product.quantity}</td>
                         ${product.status == 1 ? `<td><span class="active">Active</span></td>`
-                            : `<td><span class="inactive">Not Active</span></td>`}
-                        <td>
+                            : `<td><span class="inactive">Not active</span></td>`}
+                           <td> 
                             <div class="table-button">
-                                <button data-id="${product.id}"><img src="../img/icons/edit.svg" alt="Edit"></button>
-                                <button data-id="${product.id}"><img src="../img/icons/swaping.svg" alt="Change"></button>
-                                <button data-id="${product.id}" ><img src="../img/icons/delete_red.svg" alt=""></button>
+                                <button id="edit-btn-product" data-id="${product.product_id}"><img src="../img/icons/edit.svg" alt="Edit"></button>
+                                <button data-id="${product.product_id}"><img src="../img/icons/swaping.svg" alt="Change"></button>
+                                <button id="delete-product" data-id="${product.product_id}" ><img src="../img/icons/delete_red.svg" alt=""></button>
                             </div>
                         </td>
                     </tr>
@@ -48,7 +48,7 @@ const fetchProducts = () => {
             } else {
                 $('#product-data').html(`
                 <tr>
-                    <td colspan="8" class="text-center">No products found</td>
+                    <td>No Products found</td>
                 </tr>
             `);
             }
@@ -87,9 +87,9 @@ const fetchProductsBrands = () => {
                             : `<td><span class="inactive">Not Active</span></td>`}
                         <td>
                             <div class="table-button">
-                                <button data-id="${brand.brand_id}"><img src="../img/icons/edit.svg" alt="Edit"></button>
+                                <button  id="edit-btn-brand" data-id="${brand.brand_id}"><img src="../img/icons/edit.svg" alt="Edit"></button>
                                 <button data-id="${brand.brand_id}"><img src="../img/icons/swaping.svg" alt="Change"></button>
-                                <button data-id="${brand.brand_id}" ><img src="../img/icons/delete_red.svg" alt=""></button>
+                                <button id="delete-brand" data-id="${brand.brand_id}" ><img src="../img/icons/delete_red.svg" alt=""></button>
                             </div>
                         </td>
                     </tr>
@@ -139,9 +139,9 @@ const fetchProductsCategory = () => {
                             : `<td><span class="inactive">Not Active</span></td>`}
                         <td>
                             <div class="table-button">
-                                <button data-id="${category.category_id}"><img src="../img/icons/edit.svg" alt="Edit"></button>
+                                <button id="edit-btn-category" data-id="${category.category_id}"><img src="../img/icons/edit.svg" alt="Edit"></button>
                                 <button data-id="${category.category_id}"><img src="../img/icons/swaping.svg" alt="Change"></button>
-                                <button data-id="${category.category_id}" ><img src="../img/icons/delete_red.svg" alt=""></button>
+                                <button id="delete-category" data-id="${category.category_id}" ><img src="../img/icons/delete_red.svg" alt=""></button>
                             </div>
                         </td>
                     </tr>
@@ -199,9 +199,9 @@ const fetchingOrders = () => {
                             : `<td><span class="inactive">Not Payed</span></td>`}
                         <td>
                             <div class="table-button">
-                                <button data-id="${order.order_id}"><img src="../img/icons/edit.svg" alt="Edit"></button>
+                                <button id="edit-btn-order" data-id="${order.order_id}"><img src="../img/icons/edit.svg" alt="Edit"></button>
                                 <button data-id="${order.order_id}"><img src="../img/icons/swaping.svg" alt="Change"></button>
-                                <button data-id="${order.order_id}" ><img src="../img/icons/delete_red.svg" alt=""></button>
+                                <button id="delete-order" data-id="${order.order_id}" ><img src="../img/icons/delete_red.svg" alt=""></button>
                             </div>
                         </td>
                     </tr>

@@ -307,7 +307,8 @@ main {
     p {
         color: black;
     }
-    .count{
+
+    .count {
         padding: 5px;
         border-top: 1px solid grey;
         font-weight: 600;
@@ -323,25 +324,34 @@ main {
 
 table {
     border-collapse: collapse;
-    border-spacing: 0;
     width: 100%;
-    border: 1px solid grey;
-    border-radius: 5px;
-    background-color: whitesmoke;
+    /* overflow-x: auto; */
 }
 
-th,
+thead {
+    background-color: white;
+    padding: 10px;
+    border: 1px solid grey;
+
+}
+
+thead th {
+    padding: 10px;
+    color: black;
+}
+
 td {
     text-align: left;
-    padding: 8px;
-    cursor: pointer;
-    border-bottom: 1px solid grey;
+    padding: 10px;
 }
-table tr{
-    transition: 1s ease all;
+
+
+tbody tr:hover {
+    background-color: bisque;
 }
-table tr:hover {
-    background-color: rgb(194, 194, 194);
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
 }
 
 table td .table-button {
@@ -357,6 +367,7 @@ table td button {
     background-color: inherit;
     cursor: pointer;
 }
+
 table td .pending {
     background-color: blue;
     color: white;
@@ -473,9 +484,10 @@ main .url {
 }
 
 /* Forms Design for popover-open */
-.container-form-product{
+.container-form-product {
     display: none;
 }
+
 .container-form {
     position: fixed;
     top: 0;
@@ -483,11 +495,13 @@ main .url {
     z-index: 999;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* dimmed overlay */
+    background-color: rgba(0, 0, 0, 0.6);
+    /* dimmed overlay */
     display: grid;
-     place-items: center;
-     transition: 1s;
+    place-items: center;
+    transition: 1s;
 }
+
 .form-container {
     place-self: center;
     background-color: #ddd;
@@ -512,8 +526,9 @@ main .url {
         cursor: pointer;
     }
 }
-.form-container .head{
-    border-bottom: 1px solid grey;
+
+.form-container .head {
+    padding: 7px;
 }
 
 .form-container form .form-inputs {
@@ -535,13 +550,16 @@ form input {
     outline: none;
     border-radius: 5px;
 }
-form input:focus{
+
+form input:focus {
     border: #007bff solid 1px;
 }
-form span{
+
+form span {
     font-size: 13px;
     color: red;
 }
+
 form .select-item {
     display: flex;
     flex-direction: column;
@@ -559,8 +577,31 @@ form select {
     border-radius: 5px;
 
 }
+
 form .button-container {
     padding: 10px 30px 10px 30px;
+}
+
+form .button-container .delete-button {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 15px;
+
+    .delete {
+        background-color: red;
+    }
+}
+
+form .delete-container {
+    margin-top: 10px;
+    padding: 30px;
+    border: 2px solid red;
+    background-color: tomato;
+    border-radius: 5px;
+    color: white;
 }
 
 form button {
@@ -575,16 +616,18 @@ form button {
     font-weight: 600;
     cursor: pointer;
 }
-form .file{
-   padding: 10px;
-   background-color: aliceblue;
+
+form .file {
+    padding: 10px;
+    background-color: aliceblue;
 }
 
-.container-form .brands{
+.container-form .brands {
     width: 25rem;
 }
 
-.msg-success, .msg-error{
+.msg-success,
+.msg-error {
     text-align: center;
     width: 100%;
     height: 100%;
@@ -595,9 +638,11 @@ form .file{
     cursor: pointer;
     text-transform: capitalize;
 }
-.msg-error{
+
+.msg-error {
     background-color: tomato;
 }
-.msg-success{
+
+.msg-success {
     background-color: rgb(42, 128, 42);
 }

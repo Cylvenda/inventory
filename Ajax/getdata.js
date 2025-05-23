@@ -1,5 +1,9 @@
 $(document).ready(() => {
     // Load brands on page load
+    getBrands();
+
+});
+const getBrands = () => {
     $.ajax({
         url: '../php_action/fetchBrands.php',
         method: 'GET',
@@ -17,7 +21,6 @@ $(document).ready(() => {
             console.error("Error loading brands:", xhr.responseText);
         }
     });
-
 
     $('#brand').change(function () {
         const brandId = $(this).val();
@@ -46,5 +49,4 @@ $(document).ready(() => {
         });
     });
 
-
-});
+}

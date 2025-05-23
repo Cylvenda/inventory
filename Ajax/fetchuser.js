@@ -29,9 +29,9 @@ const fethcingUserData = () => {
                             : `<td><span class="inactive">Not Active</span></td>`}
                         <td>
                             <div class="table-button">
-                                <button data-id="${user.user_id}"><img src="../img/icons/edit.svg" alt="Edit"></button>
-                                <button data-id="${user.user_id}"><img src="../img/icons/swaping.svg" alt="Change"></button>
-                                <button data-id="${user.user_id}" ><img src="../img/icons/delete_red.svg" alt=""></button>
+                                <button id="edit-btn-user" data-id="${user.employee_id}"><img src="../img/icons/edit.svg" alt="Edit"></button>
+                                <button data-id="${user.employee_id}"><img src="../img/icons/swaping.svg" alt="Change"></button>
+                                <button id="delete-user" data-id="${user.employee_id}" ><img src="../img/icons/delete_red.svg" alt=""></button>
                             </div>
                         </td>
                     </tr>
@@ -86,9 +86,9 @@ const fetchingSupplierData = () => {
                         
                         <td>
                             <div class="table-button">
-                                <button data-id="${supp.supplier_id}"><img src="../img/icons/edit.svg" alt="Edit"></button>
+                                <button id="edit-btn-supplier" data-id="${supp.supplier_id}"><img src="../img/icons/edit.svg" alt="Edit"></button>
                                 <button data-id="${supp.supplier_id}"><img src="../img/icons/swaping.svg" alt="Change"></button>
-                                <button data-id="${supp.supplier_id}" ><img src="../img/icons/delete_red.svg" alt=""></button>
+                                <button id="delete-supplier" data-id="${supp.supplier_id}" ><img src="../img/icons/delete_red.svg" alt=""></button>
                             </div>
                         </td>
                     </tr>

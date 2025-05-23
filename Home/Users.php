@@ -15,7 +15,7 @@
             </span>
             <span><button onclick="getForm()">Add New user</button></span>
         </div>
-
+    <!-- user add model -->
         <div class="container-form-product" id="product-form-product">
             <div class="container-form">
                 <div class="form-container user-form">
@@ -70,6 +70,68 @@
                             </div>
                             <div class="button-container">
                                 <button type="button" onclick="addUser()">Add User</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- user edit model -->
+        <div class="container-form-product" id="update-form">
+            <div class="container-form">
+                <div class="form-container user-form">
+                    <div class="head">
+                        <h3>Update Employee Details</h3>
+                        <button class="close-form-btn"><img src="../img/icons/close.svg" alt=""></button>
+                    </div>
+                    <div id="msg-edit"></div>
+                    <form id="user-form">
+                        <div class="brands">
+                            <div class="form-inputs">
+                                <label for="text">Name:</label>
+                                <input type="hidden" id="user-id-edit" name="user-id-edit">
+                                <input type="text" id="edit-name" placeholder="Enter users Name">
+                                <span class="form-error" id="form-error-name"></span>
+                            </div>
+                            <div class="form-inputs">
+                                <label for="name">Email:</label>
+                                <input type="email" id="edit-email" name="email" placeholder="Enter User Email">
+                                <span class="form-error" id="form-error-email"></span>
+                            </div>
+
+                            <div class="form-inputs">
+                                <label for="phone">Phonenumber:</label>
+                                <input type="tel" name="phone" id="edit-phone" placeholder="Enter users Phonenumber">
+                            </div>
+
+
+                            <div class="button-container">
+                                <button type="button" onclick="updateUser()">Update employee</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- delete user model -->
+                <div class="container-form-product" id="delete-form">
+            <div class="container-form">
+                <div class="form-container user-form">
+                    <div class="head">
+                        <h3>Delete Employee</h3>
+                        <button class="close-form-btn"><img src="../img/icons/close.svg" alt="X"></button>
+                    </div>
+                    <div id="msg-edit"></div>
+                    <form id="user-form">
+                        <div class="brands">
+                            <div class="delete-container">
+                                <p>Are You Sure You want to Delete this Employee</p>
+                            </div>
+                            <div class="button-container">
+                                <div class="delete-button">
+                                    <button class="delete" type="button" onclick="deleteteUser()">Yes Delete</button>
+                                    <button type="button" class="close-form-btn">No Close</button>
+                                </div>
                             </div>
                         </div>
                     </form>

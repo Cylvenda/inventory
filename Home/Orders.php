@@ -16,6 +16,32 @@
             <span><button>Add New Order</button></span>
         </div>
 
+        <!-- delete user model -->
+        <div class="container-form-product" id="delete-form">
+            <div class="container-form">
+                <div class="form-container user-form">
+                    <div class="head">
+                        <h3>Delete Order</h3>
+                        <button class="close-form-btn"><img src="../img/icons/close.svg" alt=""></button>
+                    </div>
+                    <div id="msg-edit"></div>
+                    <form id="user-form">
+                        <div class="brands">
+                            <div class="delete-container">
+                                <p>Are You Sure You want to Delete this Order...?.</p>
+                            </div>
+                            <div class="button-container">
+                                <div class="delete-button">
+                                    <button class="delete" type="button" onclick="deleteteUser()">Yes Delete</button>
+                                    <button type="button" class="close-form-btn">No Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
         <div class="main-container">
             <div class="boxes">
                 <h3>Placed Orders</h3>

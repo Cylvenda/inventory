@@ -9,7 +9,7 @@ $password = htmlspecialchars(trim($_POST['password']));
 $role = intval($_POST['role']);
 $status = intval($_POST['status']);
 
-$check_stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
+$check_stmt = $conn->prepare("SELECT * FROM employee WHERE email = ?");
 $check_stmt->bind_param("s", $email);
 $check_stmt->execute();
 
@@ -20,7 +20,7 @@ if ($check_stmt->get_result()->num_rows > 0) {
 
 $newpass = password_hash($password, PASSWORD_DEFAULT);
 
-$insert_stmt = $conn->prepare("INSERT INTO users (name, email, password, phone, role, status) VALUES (?, ?, ?, ?, ?, ?)");
+$insert_stmt = $conn->prepare("INSERT INTO employee (name, email, password, phone, role, status) VALUES (?, ?, ?, ?, ?, ?)");
 $insert_stmt->bind_param("ssssii", $name, $email, $newpass, $phone, $role, $status);
 
 if ($insert_stmt->execute()) {

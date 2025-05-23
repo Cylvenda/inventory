@@ -63,6 +63,72 @@
             </div>
         </div>
 
+         <div class="container-form-product" id="update-form">
+            <div class="container-form">
+                <div class="form-container user-form">
+                    <div class="head">
+                        <h3>Edit Suppliers Details</h3>
+                        <button class="close-form-btn"><img src="../img/icons/close.svg" alt=""></button>
+                    </div>
+                    <div id="msg-edit"></div>
+                    <form id="user-form">
+                        <div class="brands">
+                            <input type="hidden" id="supp-id-edit" name="supp-id-edit">
+                            <div class="form-inputs">
+
+                                <label for="text">Name:</label>
+                                <input type="text" id="edit-name" placeholder="Enter users Name">
+                                <span class="form-error" id="form-error-name"></span>
+                            </div>
+                            <div class="form-inputs">
+                                <label for="name">Email:</label>
+                                <input type="email" id="edit-email" name="email" placeholder="Enter User Email">
+                                <span class="form-error" id="form-error-email"></span>
+                            </div>
+
+                            <div class="form-inputs">
+                                <label for="phone">Phonenumber:</label>
+                                <input type="tel" name="phone" id="edit-phone" placeholder="Enter users Phonenumber">
+                                <span class="form-error" id="form-error-phone"></span>
+                            </div>
+
+
+                            <div class="button-container">
+                                <button type="button" onclick="updateSupplier()">Update Suppliers</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+                <!-- delete supplier model -->
+                <div class="container-form-product" id="delete-form">
+            <div class="container-form">
+                <div class="form-container user-form">
+                    <div class="head">
+                        <h3>Delete Supplier</h3>
+                        <button class="close-form-btn"><img src="../img/icons/close.svg" alt=""></button>
+                    </div>
+                    <div id="msg-edit"></div>
+                    <form id="user-form">
+                        <div class="brands">
+                            <div class="delete-container">
+                                <p>Are You Sure You want to Delete this Supplier...?.</p>
+                            </div>
+                            <div class="button-container">
+                                <div class="delete-button">
+                                    <button class="delete" type="button" onclick="deleteteUser()">Yes Delete</button>
+                                    <button type="button" class="close-form-btn">No Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
         <div class="main-container">
             <div class="boxes">
                 <h3>Our Suppliers</h3>

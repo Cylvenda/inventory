@@ -94,13 +94,15 @@
                 <h3>Recently Order Added</h3>
                 <div class="table-container">
                     <table>
-                        <tr>
-                            <th>#</th>
-                            <th>Date Created</th>
-                            <th>Client Name</th>
-                            <th>Client Email</th>
-                            <th>Payment Status</th>
-                        </tr>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Date Created</th>
+                                <th>Client Name</th>
+                                <th>Client Email</th>
+                                <th>Payment Status</th>
+                            </tr>
+                        </thead>
 
                         <?php
                         $sql = mysqli_query($conn, "SELECT * FROM placed_orders ORDER BY order_id LIMIT 5 ");
@@ -132,13 +134,15 @@
                 <h3> Top Active Suppliers </h3>
                 <div class="table-container">
                     <table>
-                        <tr>
-                            <th>#</th>
-                            <th>Supplier Name</th>
-                            <th>supplier Email</th>
-                            <th>Supplier Phone</th>
-                            <th>Supplier Status</th>
-                        </tr>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Supplier Name</th>
+                                <th>supplier Email</th>
+                                <th>Supplier Phone</th>
+                                <th>Supplier Status</th>
+                            </tr>
+                        </thead>
 
                         <?php
                         $sql = mysqli_query($conn, "SELECT * FROM suppliers ORDER BY RAND() LIMIT 5 ");
