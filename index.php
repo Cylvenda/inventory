@@ -45,7 +45,7 @@
                 </div>
 
                 <div class="check-box">
-                    <label htmlFor="rememberMe">
+                    <label for="rememberMe">
                         <input type="checkbox" name="rememberMe"> Remember Me
                     </label>
                 </div>

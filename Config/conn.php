@@ -6,7 +6,7 @@ $servername = 'localhost';
 $username = 'root';
 $password = '';
 $dbname = 'inventory';
-$inventory_url = 'http://localhost/inventory/';
+// $inventory_url = 'http://localhost/inventory/';
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

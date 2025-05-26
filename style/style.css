@@ -8,7 +8,10 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: aqua;
 }
-
+button a{
+    text-decoration: none;
+    color: white;
+}
 header {
     background-color: white;
     padding: 20px;
@@ -432,6 +435,10 @@ main .url {
         border-radius: 5px;
         font-weight: 600;
         cursor: pointer;
+
+        a{
+            color: black;
+        }
     }
 }
 
@@ -593,15 +600,21 @@ form .button-container .delete-button {
     .delete {
         background-color: red;
     }
+    .close-form-btn{
+        background-color: gray;
+    }
 }
 
 form .delete-container {
+    width: 100%;
     margin-top: 10px;
-    padding: 30px;
+    padding: 20px;
     border: 2px solid red;
     background-color: tomato;
     border-radius: 5px;
     color: white;
+    text-transform: capitalize;
+    cursor: progress;
 }
 
 form button {
@@ -645,4 +658,182 @@ form .file {
 
 .msg-success {
     background-color: rgb(42, 128, 42);
+}
+
+
+/* order design */
+.container-order{
+    border-radius: 5px;
+
+    button{
+        cursor: pointer;
+        transition: 1s;
+    }
+}
+.order h3{
+    padding: 5px;
+    font-weight: 600;
+}
+.order-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.container-order {
+    background-color: #dddd;
+    width: 100%;
+    padding: 20px;
+}
+
+.order-form .customer-details, .order-form .order-details-output {
+    padding: 10px;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+.order-form .customer-details h3 {
+    padding: 10px;
+}
+
+.order-form .form-inputs {
+    padding: 7px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0px;
+    justify-content: space-between;
+}
+.order-form .form-inputs label{
+    text-transform: capitalize;
+    width: 12rem;
+}
+
+.order-form .form-inputs input {
+    padding: 7px;
+    width: 100%;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+}
+
+.order-form .order-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
+    justify-content: space-between;
+    margin: 5px 70px 10px 70px;
+}
+
+.employee {
+    color: blue;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.order-form .order-buttons button,
+.order .order-form button {
+    border: none;
+    padding: 10px;
+    outline: none;
+    border-radius: 3px;
+    font-weight: 700;
+}
+
+.order-form .order-buttons .cancel {
+    background-color: red;
+    color: white;
+    width: 100%;
+}
+.order-form .order-buttons .cancel:hover{
+    background-color: rgb(180, 2, 2);
+}
+
+.order-form .order-buttons .order {
+    background-color: dodgerblue;
+    color: white;
+    width: 100%;
+}
+.order-form .order-buttons .order:hover{
+    background-color: rgb(0, 96, 192);
+}
+.order-form .add-order{
+    border: 1px solid grey;
+    padding: 10px;
+}
+
+.order-form .brand-container .plus {
+    display: flex;
+    justify-content: flex-end;
+    width: 10rem;
+}
+
+.order-form .brand-container .plus-btn {
+    background-color: blue;
+    border-radius: 5px;
+}
+.order-form .brand-container .plus-btn:hover{
+    background-color: rgb(2, 2, 199);
+}
+
+.order-form .products-select {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin: 5px 50px 0px 50px;
+}
+
+
+.order-form .products-select table tr td .minus {
+    padding: 3px;
+    
+}
+.order-form table{
+    border-collapse: collapse;
+    padding: 10px;
+}
+.order-form table tr{
+    background-color: inherit;
+}
+.order-form table tr td{
+    padding: 10px;
+}
+.order-form table tr th{
+    border-bottom: 1px solid gray;
+    padding: 10px;
+}
+.order-form table tr .select{
+    width: 20rem;
+}
+.order-form table tr:hover{
+    background-color: inherit;
+}
+
+.order-form .products-select table select, .order-form .products-select table input {
+    width: 90%;
+    padding: 6px;
+}
+
+.order-form .outcome-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+}
+.order-form .outcome-container .product-output, .order-form .outcome-container .payment-method{
+    width: 100%;
+    padding: 0 10px 0 10px;
+
+    input, select{
+        width: 100%;
+        padding: 8px;
+        border-radius: 5px;
+        border: none;
+    }
+    .form-count{
+        padding: 4px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 5px;
+    }
 }

@@ -13,6 +13,7 @@
 <script src="../Ajax/getUpdates.js"></script>
 <script src="../Ajax/update.js"></script>
 <script src="../Ajax/getdeletion.js"></script>
+<script src="../Ajax/Order.js"></script>
 </body>
 
 </html>

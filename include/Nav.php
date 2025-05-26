@@ -5,7 +5,8 @@
             <img src="../img/icons/inventory.svg" alt=""> <span>Dashboard</span>
         </div>
         <button class="large-media-width" onclick="menuClose()"><img src="../img/icons/close.svg" alt="Menu"></button>
-        <button class="small-media-width" onclick="menuShowSmall()"><img src="../img/icons/close.svg" alt="Menu"></button>
+        <button class="small-media-width" onclick="menuShowSmall()"><img src="../img/icons/close.svg"
+                alt="Menu"></button>
     </div>
     <div class="nav-links">
         <ul>
@@ -15,11 +16,6 @@
                         <img src="../img/icons/home..svg" alt=""><span>Home</span>
                     </div>
                 </a>
-            </li>
-
-            <li>
-                <a href="Products"> <img src="../img/icons/product.svg" alt=""><span>Products</span></a>
-
             </li>
 
 
@@ -33,6 +29,11 @@
             </li>
 
             <li>
+                <a href="Products"> <img src="../img/icons/product.svg" alt=""><span>Products</span></a>
+
+            </li>
+
+            <li>
                 <a href="Orders"> <img img src="../img/icons/orders_b.svg" alt=""><span>Orders</span> </a>
             </li>
 
@@ -42,14 +43,12 @@
             </li>
 
             <li>
-                <a href="Users"> <img img src="../img/icons/group_manage.svg" alt=""><span>Users</span> </a>
+                <a href="Employees"> <img img src="../img/icons/group_manage.svg" alt=""><span>Employees</span> </a>
             </li>
 
             <li>
                 <a href="../Config/logout?auth=<?php echo $_SESSION['user_id']; ?>">
-                    <div class="link-container">
-                        <img src="../img/icons/logout_b.svg"> <span>Logout</span>
-                    </div>
+                    <img src="../img/icons/logout_b.svg"> <span>Logout</span>
                 </a>
             </li>
         </ul>

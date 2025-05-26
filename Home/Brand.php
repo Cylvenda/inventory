@@ -50,7 +50,7 @@
             </div>
         </div>
         <!-- update form  -->
-                <div class="container-form-product" id="update-form">
+        <div class="container-form-product" id="update-form">
             <div class="container-form">
                 <div class="form-container">
                     <div class="brands">
@@ -77,8 +77,8 @@
             </div>
         </div>
 
-                            <!-- delete user model -->
-                <div class="container-form-product" id="delete-form">
+        <!-- delete user model -->
+        <div class="container-form-product" id="delete-form">
             <div class="container-form">
                 <div class="form-container user-form">
                     <div class="head">
@@ -88,14 +88,17 @@
                     <div id="msg-edit"></div>
                     <form id="user-form">
                         <div class="brands">
+                            <div class="deletion-msg">
+
+                            </div>
                             <div class="delete-container">
                                 <p>This Action will Remove all category and Product Originated from this Brand. <br>
                                     Are You Sure You want to Delete this Brand...?.</p>
                             </div>
                             <div class="button-container">
                                 <div class="delete-button">
-                                    <button class="delete" type="button" onclick="deleteteUser()">Yes Delete</button>
-                                    <button type="button" class="close-form-btn">No Close</button>
+                                    <button class="delete" type="button" id="delete-brand-btn">Yes Delete</button>
+                                    <button type="button" class="close-form-btn">Close</button>
                                 </div>
                             </div>
                         </div>

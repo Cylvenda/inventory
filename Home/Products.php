@@ -90,8 +90,8 @@
             </div>
 
 
-            <div  class="update-form">
-                
+            <div class="update-form">
+
                 <div class="container-form-product" id="update-form">
                     <div class="container-form">
                         <div class="form-container">
@@ -111,7 +111,7 @@
                                 <div class="select">
                                     <div class="select-item">
                                         <label for="brand">Select Brand:</label>
-                                        <select class="brand"  name="brand" required>
+                                        <select class="brand" name="brand" required>
                                             <option id="edit-brand"></option>
                                         </select>
                                         <span class="form-error" id="form-error-brand"></span>
@@ -165,31 +165,35 @@
                 </div>
             </div>
 
-                    <!-- delete user model -->
-                <div class="container-form-product" id="delete-form">
-            <div class="container-form">
-                <div class="form-container user-form">
-                    <div class="head">
-                        <h3>Delete Product</h3>
-                        <button class="close-form-btn"><img src="../img/icons/close.svg" alt=""></button>
-                    </div>
-                    <div id="msg-edit"></div>
-                    <form id="user-form">
-                        <div class="brands">
-                            <div class="delete-container">
-                                <p>Are You Sure You want to Delete this Product...?.</p>
-                            </div>
-                            <div class="button-container">
-                                <div class="delete-button">
-                                    <button class="delete" type="button" onclick="deleteteUser()">Yes Delete</button>
-                                    <button type="button" class="close-form-btn">No Close</button>
+            <!-- delete user model -->
+            <div class="container-form-product" id="delete-form">
+                <div class="container-form">
+                    <div class="form-container user-form">
+                        <div class="head">
+                            <h3>Delete Product</h3>
+                            <button class="close-form-btn"><img src="../img/icons/close.svg" alt=""></button>
+                        </div>
+                        <div id="msg-edit"></div>
+                        <form id="user-form">
+                            <div class="brands">
+                                <div class="deletion-msg">
+
+                                </div>
+                                <div class="delete-container">
+                                    <p>Are You Sure You want to Delete this Product...?.</p>
+                                </div>
+                                <div class="button-container">
+                                    <div class="delete-button">
+                                        <button class="delete" type="button" id="delete-product-btn">Yes
+                                            Delete</button>
+                                        <button type="button" class="close-form-btn">Close</button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
 
         </div>
         <div class="main-container">

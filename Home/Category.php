@@ -73,15 +73,16 @@
                         <form id="category-form">
                             <div class="form-inputs">
                                 <label for="category">Select Brand:</label>
-                                <select  required>
-                                    <option  ><span id="edit-brand-category"></span></option>
+                                <select required>
+                                    <option><span id="edit-brand-category"></span></option>
                                 </select>
                                 <span class="form-error" id="form-error-category"></span>
                             </div>
 
                             <div class="form-inputs">
                                 <label for="name">Category Name:</label>
-                                <input type="text" id="edit-category-name" name="category" placeholder="Enter Category Name..">
+                                <input type="text" id="edit-category-name" name="category"
+                                    placeholder="Enter Category Name..">
                                 <span class="form-error" id="form-error-category"></span>
                             </div>
 
@@ -94,8 +95,8 @@
             </div>
         </div>
 
-                            <!-- delete category model -->
-                <div class="container-form-product" id="delete-form">
+        <!-- delete category model -->
+        <div class="container-form-product" id="delete-form">
             <div class="container-form">
                 <div class="form-container user-form">
                     <div class="head">
@@ -105,13 +106,18 @@
                     <div id="msg-edit"></div>
                     <form id="user-form">
                         <div class="brands">
+                            <div class="deletion-msg">
+
+                            </div>
                             <div class="delete-container">
-                                <p>Are You Sure You want to Delete this Category...?.</p>
+                                <p>Are You Sure You want to Delete this Category ? <br>
+                                    This will also delete all products that belongs on this category.
+                                </p>
                             </div>
                             <div class="button-container">
                                 <div class="delete-button">
-                                    <button class="delete" type="button" onclick="deleteteUser()">Yes Delete</button>
-                                    <button type="button" class="close-form-btn">No Close</button>
+                                    <button class="delete" type="button" id="delete-category-btn">Yes Delete</button>
+                                    <button type="button" class="close-form-btn">Close</button>
                                 </div>
                             </div>
                         </div>

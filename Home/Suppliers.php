@@ -113,13 +113,16 @@
                     <div id="msg-edit"></div>
                     <form id="user-form">
                         <div class="brands">
+                            <div class="deletion-msg">
+
+                            </div>
                             <div class="delete-container">
                                 <p>Are You Sure You want to Delete this Supplier...?.</p>
                             </div>
                             <div class="button-container">
                                 <div class="delete-button">
-                                    <button class="delete" type="button" onclick="deleteteUser()">Yes Delete</button>
-                                    <button type="button" class="close-form-btn">No Close</button>
+                                    <button class="delete" type="button" id="delete-supplier-btn">Yes Delete</button>
+                                    <button type="button" class="close-form-btn">Close</button>
                                 </div>
                             </div>
                         </div>

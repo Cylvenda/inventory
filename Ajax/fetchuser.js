@@ -24,7 +24,7 @@ const fethcingUserData = () => {
                         <td>${user.email}</td>
                         <td>${user.phone}</td>
                         ${user.role == 1 ? `<td><span class="active">System Admin</span></td>`
-                            : `<td><span class="pending">Employee</span></td>`}
+                            : `<td><span class="pending">Saler</span></td>`}
                         ${user.status == 1 ? `<td><span class="active">Active</span></td>`
                             : `<td><span class="inactive">Not Active</span></td>`}
                         <td>

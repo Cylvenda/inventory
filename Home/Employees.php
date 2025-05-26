@@ -9,12 +9,14 @@
     <main>
         <!-- url container -->
         <div class="url">
-            <span><a href="Dashboard">Home</a> / <a href="Users">Users</a></span>
+            <span><a href="Dashboard">Home</a> / <a href="Users">Employees</a></span>
             <span>
-                <h3>User Management</h3>
+                <h3>Employees Management</h3>
             </span>
-            <span><button onclick="getForm()">Add New user</button></span>
+            <span><button onclick="getForm()">Add New Employee</button></span>
         </div>
+
+        <div class="msg-deletion"></div>
     <!-- user add model -->
         <div class="container-form-product" id="product-form-product">
             <div class="container-form">
@@ -121,16 +123,16 @@
                         <h3>Delete Employee</h3>
                         <button class="close-form-btn"><img src="../img/icons/close.svg" alt="X"></button>
                     </div>
-                    <div id="msg-edit"></div>
                     <form id="user-form">
                         <div class="brands">
+                             <div class="deletion-msg" id="msg-edit"></div>
                             <div class="delete-container">
                                 <p>Are You Sure You want to Delete this Employee</p>
                             </div>
                             <div class="button-container">
                                 <div class="delete-button">
-                                    <button class="delete" type="button" onclick="deleteteUser()">Yes Delete</button>
-                                    <button type="button" class="close-form-btn">No Close</button>
+                                    <button class="delete" type="button" id="delete-user-btn">Yes Delete</button>
+                                    <button type="button" class="close-form-btn"> Close</button>
                                 </div>
                             </div>
                         </div>
