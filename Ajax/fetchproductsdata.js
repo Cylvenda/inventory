@@ -191,8 +191,9 @@ const fetchingOrders = () => {
                         <td>${count}</td>
                         <td>${order.date}</td>
                         <td>${order.client_name}</td>
-                        <td>${order.client_email}</td>
-                        <td>${order.client_phone}</td>
+                        <td>${order.total_items}</td>
+                        <td>${order.total_price}</td>
+                        <td>${order.payed_amount}</td>
                         ${order.status == 1 ? `<td><span class="active">Done</span></td>`
                             : `<td><span class="pending">Pending</span></td>`}
                         ${order.payment_status == 1 ? `<td><span class="active">Payed</span></td>`

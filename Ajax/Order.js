@@ -211,7 +211,7 @@ const submitOrder = () => {
            // $('#order-msg').css('display', 'block');
             $(".delete-container").html(`<div class='msg-success'>${response.success}</div>`);
             // alert('Order placed successfully!');
-            //  window.location.href = 'Orders';
+             window.location.href = 'Orders';
         },
         error: (xhr) => {
             console.error("Error submitting order:", xhr.responseText);

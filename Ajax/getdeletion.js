@@ -60,7 +60,7 @@ $(document).on('click', '#delete-product', function () {
     });
 });
 
-
+// removing all popups on delete
 $(document).on('click', '.close-form-btn', () => {
     $('#delete-form').hide();
 });

@@ -347,7 +347,9 @@ td {
     text-align: left;
     padding: 10px;
 }
-
+table th, td{
+    text-align: left;
+}
 
 tbody tr:hover {
     background-color: bisque;

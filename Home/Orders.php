@@ -45,6 +45,48 @@
             </div>
         </div>
 
+                    <div class="container-form-product" id="product-form-product">
+                <div class="container-form">
+                    <div class="form-container">
+                        <div class="head">
+                            <h3>Order Details</h3>
+                            <button type="button" class="close-form-btn"><img src="../img/icons/close.svg"
+                                    alt="Close"></button>
+                        </div>
+                        <div id="msg"></div>
+                        <form id="product-form">
+                            <div class="form-inputs">
+                                <label for="img">Client Name:</label>
+                                <input type="file" id="cname" >
+                            </div>
+
+                            <div class="form-inputs">
+                                <label for="product-name">Client Email:</label>
+                                <input type="text"  id="cemail" >
+                                <span class="form-error" id="form-error-name"></span>
+                            </div>
+                            <div class="form-inputs">
+                                <label for="qty">Total Order Quantity:</label>
+                                <input type="number" class="qty" name="qty" id="qty"
+                                    placeholder="Enter Product Quantity">
+                                <span class="form-error" id="form-error-qty"></span>
+                            </div>
+
+                            <div class="form-inputs">
+                                <label for="price">Enter Price:</label>
+                                <input type="number" class="price" name="price" id="price"
+                                    placeholder="Enter Product Price">
+                                <span class="form-error" id="form-error-price"></span>
+                            </div>
+
+                            <div class="button-container">
+                                <button class="close-form-btn" type="button">Close</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
         <div class="main-container">
             <div class="boxes">
                 <h3>Placed Orders</h3>
@@ -75,6 +117,7 @@
                                 <th>Client Name</th>
                                 <th>Total Items</th>
                                 <th>Total Amount</th>
+                                <th>Payed Amount</th>
                                 <th>Order Status</th>
                                 <th>Payment Status</th>
                                 <th>Actions</th>

@@ -16,6 +16,7 @@
             <span>
                 <button onclick="getForm()">Add New Product</button>
             </span>
+            </div>
 
 
             <div class="container-form-product" id="product-form-product">

@@ -17,21 +17,20 @@
             <span><button><a href="Orders">Back</a></button></span>
         </div>
 
-                        <div class="container-form-product" id="order-msg">
+        <div class="container-form-product" id="order-msg">
             <div class="container-form">
                 <div class="form-container user-form">
                     <div class="head">
-                        <h3>Delete Employee</h3>
+                        <h3>Order Control Management</h3>
                         <button class="close-form-btn"><img src="../img/icons/close.svg" alt="X"></button>
                     </div>
                     <form id="user-form">
                         <div class="brands">
-                            <div class="delete-container">
-                                
-                            </div>
+                            <div class="delete-container"></div>
+                            <div class="order-msg"></div>
                             <div class="button-container">
                                 <div class="delete-button">
-                                
+
                                     <button type="button" class="close-form-btn"> Close</button>
                                 </div>
                             </div>
@@ -43,7 +42,7 @@
 
         <div class="container-order">
             <div class="order">
-                <form class="order-form">
+                <form class="order-form" id=>
                     <div class="customer-details">
                         <h3>Client Details</h3>
                         <div class="form-inputs">
