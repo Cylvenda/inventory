@@ -365,6 +365,9 @@ table td .table-button {
     flex-wrap: wrap;
     gap: 10px;
 }
+table td span{
+    cursor: pointer;
+}
 
 table td button {
     outline: none;
