@@ -13,9 +13,7 @@
             <span>
                 <h3>Category Management</h3>
             </span>
-            <span>
-                <button onclick="getForm()">Add New Category</button>
-            </span>
+
         </div>
 
 

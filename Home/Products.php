@@ -13,9 +13,7 @@
             <span>
                 <h3>Products Management</h3>
             </span>
-            <span>
-                <button onclick="getForm()">Add New Product</button>
-            </span>
+
             </div>
 
         </div>

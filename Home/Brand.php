@@ -13,9 +13,7 @@
             <span>
                 <h3>Brand Management</h3>
             </span>
-            <span>
-                <button onclick="getForm()">Add New Brand</button>
-            </span>
+
         </div>
 
         <div class="main-container">

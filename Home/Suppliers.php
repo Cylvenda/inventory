@@ -14,7 +14,7 @@
             <span>
                 <h3>Supplier Management</h3>
             </span>
-            <span><button onclick="getForm()">Add New supplier</button></span>
+           
         </div>
 
  
