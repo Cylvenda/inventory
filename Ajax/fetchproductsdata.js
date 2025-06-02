@@ -31,12 +31,11 @@ const fetchProducts = () => {
                         <td>${product.category_name}</td>
                         <td>${formattedPrice}</td>
                         <td>${product.quantity}</td>
-                        ${product.status == 1 ? `<td><span class="active">Active</span></td>`
-                            : `<td><span class="inactive">Not active</span></td>`}
+                        ${product.quantity > 1 ? `<td><span class="active">Available</span></td>`
+                            : `<td><span class="inactive">Stock Out</span></td>`}
                            <td> 
                             <div class="table-button">
                                 <button id="edit-btn-product" data-id="${product.product_id}"><img src="../img/icons/edit.svg" alt="Edit"></button>
-                                <button data-id="${product.product_id}"><img src="../img/icons/swaping.svg" alt="Change"></button>
                                 <button id="delete-product" data-id="${product.product_id}" ><img src="../img/icons/delete_red.svg" alt=""></button>
                             </div>
                         </td>
@@ -83,12 +82,9 @@ const fetchProductsBrands = () => {
                         <td>${count}</td>
                         <td>${brand.date}</td>
                         <td>${brand.name}</td>
-                        ${brand.status == 1 ? `<td><span class="active">Active</span></td>`
-                            : `<td><span class="inactive">Not Active</span></td>`}
                         <td>
                             <div class="table-button">
                                 <button  id="edit-btn-brand" data-id="${brand.brand_id}"><img src="../img/icons/edit.svg" alt="Edit"></button>
-                                <button data-id="${brand.brand_id}"><img src="../img/icons/swaping.svg" alt="Change"></button>
                                 <button id="delete-brand" data-id="${brand.brand_id}" ><img src="../img/icons/delete_red.svg" alt=""></button>
                             </div>
                         </td>
@@ -135,12 +131,10 @@ const fetchProductsCategory = () => {
                         <td>${category.date}</td>
                         <td>${category.name}</td>
                         <td>${category.brand_name}</td>
-                        ${category.status == 1 ? `<td><span class="active">Active</span></td>`
-                            : `<td><span class="inactive">Not Active</span></td>`}
+                       
                         <td>
                             <div class="table-button">
                                 <button id="edit-btn-category" data-id="${category.category_id}"><img src="../img/icons/edit.svg" alt="Edit"></button>
-                                <button data-id="${category.category_id}"><img src="../img/icons/swaping.svg" alt="Change"></button>
                                 <button id="delete-category" data-id="${category.category_id}" ><img src="../img/icons/delete_red.svg" alt=""></button>
                             </div>
                         </td>
@@ -201,7 +195,7 @@ const fetchingOrders = () => {
                         <td>
                             <div class="table-button">
                                 <button id="edit-btn-order" data-id="${order.order_id}"><img src="../img/icons/edit.svg" alt="Edit"></button>
-                                <button data-id="${order.order_id}"><img src="../img/icons/swaping.svg" alt="Change"></button>
+                                <button id="status-order" data-id="${order.order_id}"><img src="../img/icons/swaping.svg" alt="Change"></button>
                                 <button id="delete-order" data-id="${order.order_id}" ><img src="../img/icons/delete_red.svg" alt=""></button>
                             </div>
                         </td>

@@ -2,7 +2,7 @@
 <nav id="nav-bar">
     <div class="dash">
         <div class="a">
-            <img class="admin" src="../img/icons/inventory.svg" alt=""> <span>Admin Dashboard</span>
+            <img src="../img/icons/inventory.svg" alt=""> <span>Dashboard</span>
         </div>
         <button class="large-media-width" onclick="menuClose()"><img src="../img/icons/close.svg" alt="Menu"></button>
         <button class="small-media-width" onclick="menuShowSmall()"><img src="../img/icons/close.svg"
@@ -42,9 +42,6 @@
                 <a href="Suppliers"> <img img src="../img/icons/person_bl.svg" alt=""><span>Suppliers</span> </a>
             </li>
 
-            <li>
-                <a href="Employees"> <img img src="../img/icons/group_manage.svg" alt=""><span>Employees</span> </a>
-            </li>
 
             <li>
                 <a href="../Config/logout?auth=<?php echo $_SESSION['user_id']; ?>">

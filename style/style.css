@@ -113,6 +113,10 @@ nav .dash {
         span {
             transition: 1.5s;
         }
+
+        .admin{
+            display: none;
+        }
     }
 }
 
@@ -168,17 +172,7 @@ nav .nav-links ul li .link-container:hover {
     font-weight: 700;
 }
 
-.nav-links ul li .btn-arrow img {
-    transition: 1s;
-}
 
-.nav-links ul li .btn-arrow img:hover {
-    transform: rotate(180deg);
-}
-
-.nav-links ul li .btn-arrow-active img {
-    transform: rotate(180deg);
-}
 
 nav .nav-links ul li .link-container,
 nav .dash a {
@@ -227,7 +221,9 @@ nav .nav-links .btn-submenu ul li a {
     font-size: 0px;
     transition: 1.5s;
 }
-
+.nav-menu-link .dash .a .admin{
+    display: block;
+}
 .nav-menu-link .nav-links ul li .btn-arrow img,
 .nav-menu-link .dash button {
     display: none;
@@ -285,6 +281,19 @@ main {
     border-radius: 5px;
     height: 100%;
     align-items: center;
+
+    .green{
+        background-color: green;
+    }
+     .red{
+        background-color: red;
+    }
+     .tomato{
+        background-color: blue;
+    }
+     .yellow{
+        background-color: yellow;
+    }
 }
 
 .main-container .boxes .box {
@@ -346,6 +355,7 @@ thead th {
 td {
     text-align: left;
     padding: 10px;
+    cursor: pointer;
 }
 table th, td{
     text-align: left;
@@ -543,7 +553,7 @@ main .url {
     padding: 7px;
 }
 
-.form-container form .form-inputs {
+.form-container form .form-inputs, .profile-container .form-inputs {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -614,12 +624,16 @@ form .delete-container {
     width: 100%;
     margin-top: 10px;
     padding: 20px;
-    border: 2px solid red;
-    background-color: tomato;
+    border: 1px solid yellow;
+    background-color: rgb(240, 222, 58);
     border-radius: 5px;
-    color: white;
+    color: black;
     text-transform: capitalize;
-    cursor: progress;
+    cursor: pointer;
+
+    button{
+        color: black;
+    }
 }
 
 form button {
@@ -659,10 +673,15 @@ form .file {
 
 .msg-error {
     background-color: tomato;
+    color: white;
 }
 
 .msg-success {
     background-color: rgb(42, 128, 42);
+    color: white;
+}
+.customer-details .new{
+    color: white;
 }
 
 

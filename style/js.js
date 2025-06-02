@@ -13,8 +13,8 @@ const MenuAddShow = () => {
     subMenu.classList.add('menu-link');
     subMenu.innerHTML =
         `<ul>
-        <li><a href="#"><img src="../img/icons/person_bl.svg">View Profile</a></li>
-        <li><a href="#" > <img src="../img/icons/password.svg"> Change Password</a></li>
+        <li id="edit-profile-user"><a id="edit-profile-user" href="Profile"><img src="../img/icons/person_bl.svg">View Profile</a></li>
+        <li><a href="Password" > <img src="../img/icons/password.svg"> Change Password</a></li>
         <li><a href="../Config/logout"><img src="../img/icons/logout_b.svg"> Logout</a></li>
     </ul>`;
 

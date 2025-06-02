@@ -80,4 +80,54 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' &&  isset($_POST['employee_id'])) {
 
 }
 
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user_pass_id'])) {
+    $employee_id = $_POST['user_pass_id'];
+    $oldPass = trim($_POST['oldPass']);
+    $newPass = trim($_POST['newPass']);
+    $comfrmNewPass = trim($_POST['comfrmNewPass']);
+
+    // Validate new password matches confirmation
+    if ($newPass !== $comfrmNewPass) {
+        echo json_encode(["error" => "New password and confirmation don't match"]);
+        exit;
+    }
+
+
+    // Get current password hash from database
+    $stmt = $conn->prepare("SELECT password FROM employee WHERE employee_id = ?");
+    $stmt->bind_param('i', $employee_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows === 0) {
+        echo json_encode(["error" => "Employee not found"]);
+        exit;
+    }
+
+    $row = $result->fetch_assoc();
+    
+    // Verify old password matches stored hash
+    if (!password_verify($oldPass, $row['password'])) {
+        echo json_encode(["error" => "Wrong password - your old password doesn't match"]);
+        exit;
+    }
+
+    // Hash and update new password
+    $newPasswordHash = password_hash($newPass, PASSWORD_DEFAULT);
+    $updateStmt = $conn->prepare("UPDATE employee SET password = ? WHERE employee_id = ?");
+    $updateStmt->bind_param("si", $newPasswordHash, $employee_id);
+    
+    if ($updateStmt->execute()) {
+        echo json_encode(["success" => "Password updated successfully"]);
+    } else {
+        echo json_encode(["error" => "Database error: " . $updateStmt->error]);
+    }
+    
+    $updateStmt->close();
+    $stmt->close();
+    exit;
+}
+
+
 $conn->close();

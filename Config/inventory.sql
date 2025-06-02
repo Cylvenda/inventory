@@ -3,10 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 28, 2025 at 02:44 PM
+-- Generation Time: Jun 01, 2025 at 03:25 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
+SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -28,13 +29,16 @@ USE `inventory`;
 --
 -- Table structure for table `brands`
 --
+-- Creation: Jun 01, 2025 at 08:48 AM
+--
 
-CREATE TABLE `brands` (
-  `brand_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `brands` (
+  `brand_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL,
   `status` int(11) DEFAULT 1,
-  `date` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `date` datetime DEFAULT current_timestamp(),
+  PRIMARY KEY (`brand_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `brands`
@@ -52,14 +56,18 @@ INSERT INTO `brands` (`brand_id`, `name`, `status`, `date`) VALUES
 --
 -- Table structure for table `categories`
 --
+-- Creation: Jun 01, 2025 at 08:48 AM
+--
 
-CREATE TABLE `categories` (
-  `category_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `categories` (
+  `category_id` int(11) NOT NULL AUTO_INCREMENT,
   `brand_id` int(11) NOT NULL,
   `name` varchar(20) NOT NULL,
   `status` int(11) NOT NULL DEFAULT 1,
-  `date` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `date` datetime DEFAULT current_timestamp(),
+  PRIMARY KEY (`category_id`),
+  KEY `brand_id` (`brand_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `categories`
@@ -80,55 +88,55 @@ INSERT INTO `categories` (`category_id`, `brand_id`, `name`, `status`, `date`) V
 --
 -- Table structure for table `employee`
 --
+-- Creation: Jun 01, 2025 at 08:48 AM
+--
 
-CREATE TABLE `employee` (
-  `employee_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `employee` (
+  `employee_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(30) NOT NULL,
   `email` varchar(30) NOT NULL,
   `phone` varchar(20) NOT NULL,
   `status` int(11) NOT NULL DEFAULT 1,
   `date` timestamp NOT NULL DEFAULT current_timestamp(),
   `password` varchar(150) NOT NULL,
-  `role` int(11) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `role` int(11) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`employee_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `employee`
 --
 
 INSERT INTO `employee` (`employee_id`, `name`, `email`, `phone`, `status`, `date`, `password`, `role`) VALUES
-(1, 'admin', 'admin@gmail.com', '255780598902', 1, '2025-05-21 10:21:47', '$2y$10$kIFBmpN82s9Nzyxe9mWPdOzAH3kVDBl5TI86aW1LXTbmIBihPwAI6', 1);
+(1, 'admin', 'admin@gmail.com', '255780598902', 1, '2025-05-21 10:21:47', '$2y$10$kIFBmpN82s9Nzyxe9mWPdOzAH3kVDBl5TI86aW1LXTbmIBihPwAI6', 1),
+(2, 'Saler', 'saler@gmail.com', '255785985785', 1, '2025-06-01 13:34:51', '$2y$10$PUfSfMpz6zty4XH85qEA5.HVYOnxDED8e8/BxJ9HImkzDCkeC9K.W', 0);
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `order_items`
 --
+-- Creation: Jun 01, 2025 at 08:48 AM
+-- Last update: Jun 01, 2025 at 09:10 AM
+--
 
-CREATE TABLE `order_items` (
-  `order_item_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `order_items` (
+  `order_item_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `quantity` varchar(20) NOT NULL,
   `price` varchar(30) NOT NULL,
   `total_price` int(11) NOT NULL,
-  `date` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `date` datetime NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`order_item_id`),
+  KEY `order_id` (`order_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `order_items`
 --
 
 INSERT INTO `order_items` (`order_item_id`, `order_id`, `product_id`, `quantity`, `price`, `total_price`, `date`) VALUES
-(1, 3, 3, '3', '60000', 180000, '2025-05-28 13:10:24'),
-(2, 3, 6, '3', '60000', 180000, '2025-05-28 13:10:24'),
-(3, 3, 13, '4', '60000', 240000, '2025-05-28 13:10:24'),
-(4, 4, 3, '3', '60000', 180000, '2025-05-28 13:10:38'),
-(5, 4, 6, '3', '60000', 180000, '2025-05-28 13:10:38'),
-(6, 4, 13, '4', '60000', 240000, '2025-05-28 13:10:38'),
-(7, 5, 3, '3', '60000', 180000, '2025-05-28 13:10:39'),
-(8, 5, 6, '3', '60000', 180000, '2025-05-28 13:10:39'),
-(9, 5, 13, '4', '60000', 240000, '2025-05-28 13:10:39'),
 (10, 6, 4, '5', '60000', 300000, '2025-05-28 13:27:26'),
 (11, 6, 5, '3', '60000', 180000, '2025-05-28 13:27:26'),
 (12, 6, 10, '3', '60000', 180000, '2025-05-28 13:27:26'),
@@ -152,9 +160,12 @@ INSERT INTO `order_items` (`order_item_id`, `order_id`, `product_id`, `quantity`
 --
 -- Table structure for table `placed_orders`
 --
+-- Creation: Jun 01, 2025 at 08:48 AM
+-- Last update: Jun 01, 2025 at 12:59 PM
+--
 
-CREATE TABLE `placed_orders` (
-  `order_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `placed_orders` (
+  `order_id` int(11) NOT NULL AUTO_INCREMENT,
   `employee_id` int(11) NOT NULL,
   `client_name` varchar(30) NOT NULL,
   `client_email` varchar(50) NOT NULL,
@@ -167,40 +178,43 @@ CREATE TABLE `placed_orders` (
   `payment_method` varchar(30) NOT NULL DEFAULT 'cash',
   `status` int(11) NOT NULL DEFAULT 0,
   `payment_status` tinyint(1) NOT NULL DEFAULT 0,
-  `date` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `date` datetime DEFAULT current_timestamp(),
+  PRIMARY KEY (`order_id`),
+  KEY `employee_id` (`employee_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `placed_orders`
 --
 
 INSERT INTO `placed_orders` (`order_id`, `employee_id`, `client_name`, `client_email`, `client_phone`, `subtotal`, `total_price`, `total_items`, `payed_amount`, `discount`, `payment_method`, `status`, `payment_status`, `date`) VALUES
-(3, 1, 'bewgshf rdsgvbrjd', 'brayanmlawa0917@gmail.com', '453895636948', '600000', '540000', 10, '480000', '10', 'cash', 0, 0, '2025-05-28 13:10:24'),
-(4, 1, 'bewgshf rdsgvbrjd', 'brayanmlawa0917@gmail.com', '453895636948', '600000', '540000', 10, '480000', '10', 'cash', 0, 0, '2025-05-28 13:10:38'),
-(5, 1, 'bewgshf rdsgvbrjd', 'brayanmlawa0917@gmail.com', '453895636948', '600000', '540000', 10, '480000', '10', 'cash', 0, 0, '2025-05-28 13:10:39'),
 (6, 1, 'Elline Edecy', 'ellinejohn@gmail.com', '255654611651', '660000', '627000', 11, '600000', '5', 'cash', 0, 0, '2025-05-28 13:27:26'),
-(7, 1, 'jhgdf uireh', 'b@gmail.com', '8573894538946', '220000', '220000', 7, '0', '0', 'cash', 0, 0, '2025-05-28 13:36:12'),
-(8, 1, 'jhgdf uireh', 'b@gmail.com', '8573894538946', '220000', '220000', 7, '0', '0', 'cash', 1, 0, '2025-05-28 13:36:19'),
-(13, 1, 'bdsyhf', 'rfjgvn@gmail.cjcvn', '748354563965', '120000', '108000', 2, '0', '10', 'cash', 0, 0, '2025-05-28 13:53:31'),
-(14, 1, 'jyg', 'b@gmail.com', '68758', '20000', '20000', 1, '20000', '0', 'cash', 0, 0, '2025-05-28 14:29:37'),
-(16, 1, 'test', 'test@gmail.com', '768', '240000', '120000', 4, '120000', '50', 'cash', 0, 0, '2025-05-28 15:40:25');
+(7, 1, 'Jahseh Lumumba', 'jahsehlumumba@gmail.com', '8573894538946', '220000', '220000', 7, '0', '0', 'cash', 0, 0, '2025-05-28 13:36:12'),
+(8, 1, 'Mtole Kitale', 'kitalemtole@gmail.com', '8573894538946', '220000', '220000', 7, '0', '0', 'cash', 1, 1, '2025-05-28 13:36:19'),
+(13, 1, 'Bolege Thuram', 'thuram@gmail.cjcvn', '748354563965', '120000', '108000', 2, '0', '10', 'cash', 0, 0, '2025-05-28 13:53:31'),
+(14, 1, 'Byge Kitole', 'bygekitole@gmail.com', '68758', '20000', '20000', 1, '20000', '0', 'cash', 0, 0, '2025-05-28 14:29:37'),
+(16, 1, 'Brayan Mlawa', 'brayan@mlawa.com', '768', '240000', '120000', 4, '120000', '50', 'cash', 0, 1, '2025-05-28 15:40:25');
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `products`
 --
+-- Creation: Jun 01, 2025 at 08:48 AM
+--
 
-CREATE TABLE `products` (
-  `product_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `products` (
+  `product_id` int(11) NOT NULL AUTO_INCREMENT,
   `category_id` int(11) NOT NULL,
   `name` varchar(30) NOT NULL,
   `price` varchar(50) NOT NULL,
   `quantity` varchar(20) NOT NULL,
   `image` varchar(100) NOT NULL,
   `status` int(11) NOT NULL DEFAULT 1,
-  `date` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `date` datetime DEFAULT current_timestamp(),
+  PRIMARY KEY (`product_id`),
+  KEY `category_id` (`category_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `products`
@@ -235,120 +249,31 @@ INSERT INTO `products` (`product_id`, `category_id`, `name`, `price`, `quantity`
 --
 -- Table structure for table `suppliers`
 --
+-- Creation: Jun 01, 2025 at 08:48 AM
+-- Last update: Jun 01, 2025 at 11:39 AM
+--
 
-CREATE TABLE `suppliers` (
-  `supplier_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `suppliers` (
+  `supplier_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(30) NOT NULL,
   `email` varchar(30) NOT NULL,
   `phone` varchar(20) NOT NULL,
   `status` int(11) NOT NULL DEFAULT 1,
-  `note` text DEFAULT NULL,
-  `date` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `date` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`supplier_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `suppliers`
 --
 
-INSERT INTO `suppliers` (`supplier_id`, `name`, `email`, `phone`, `status`, `note`, `date`) VALUES
-(1, 'Brayan Mlawa', 'brayanmlawa0917@gmail.com', '255655990092', 1, NULL, '2025-05-21 10:56:35'),
-(2, 'Cylvenda', 'cylvenda@gmail.com', '255655990092', 1, NULL, '2025-05-21 10:56:58');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `brands`
---
-ALTER TABLE `brands`
-  ADD PRIMARY KEY (`brand_id`);
-
---
--- Indexes for table `categories`
---
-ALTER TABLE `categories`
-  ADD PRIMARY KEY (`category_id`),
-  ADD KEY `brand_id` (`brand_id`);
-
---
--- Indexes for table `employee`
---
-ALTER TABLE `employee`
-  ADD PRIMARY KEY (`employee_id`);
-
---
--- Indexes for table `order_items`
---
-ALTER TABLE `order_items`
-  ADD PRIMARY KEY (`order_item_id`),
-  ADD KEY `order_id` (`order_id`);
-
---
--- Indexes for table `placed_orders`
---
-ALTER TABLE `placed_orders`
-  ADD PRIMARY KEY (`order_id`),
-  ADD KEY `employee_id` (`employee_id`);
-
---
--- Indexes for table `products`
---
-ALTER TABLE `products`
-  ADD PRIMARY KEY (`product_id`),
-  ADD KEY `category_id` (`category_id`);
-
---
--- Indexes for table `suppliers`
---
-ALTER TABLE `suppliers`
-  ADD PRIMARY KEY (`supplier_id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `brands`
---
-ALTER TABLE `brands`
-  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT for table `categories`
---
-ALTER TABLE `categories`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
---
--- AUTO_INCREMENT for table `employee`
---
-ALTER TABLE `employee`
-  MODIFY `employee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
-
---
--- AUTO_INCREMENT for table `order_items`
---
-ALTER TABLE `order_items`
-  MODIFY `order_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
-
---
--- AUTO_INCREMENT for table `placed_orders`
---
-ALTER TABLE `placed_orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
---
--- AUTO_INCREMENT for table `products`
---
-ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
-
---
--- AUTO_INCREMENT for table `suppliers`
---
-ALTER TABLE `suppliers`
-  MODIFY `supplier_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+INSERT INTO `suppliers` (`supplier_id`, `name`, `email`, `phone`, `status`, `date`) VALUES
+(1, 'Azam Official', 'azam@gmail.com', '2556584853753', 1, '2025-06-01 09:29:00'),
+(2, 'Brayan Mlawa', 'brayanmlawa917@gmail.com', '2557859892', 1, '2025-06-01 09:46:55'),
+(3, 'Briana CLD', 'brianacld@gmail.com', '2557859892', 1, '2025-06-01 09:46:55'),
+(4, 'Valdez Florexy', 'valdezflorexy@gmail.com', '2557859892', 1, '2025-06-01 09:46:55'),
+(5, 'Hamad Intercontinental Trading', 'hamadtrading@gmail.com', '2557859892', 1, '2025-06-01 09:46:55'),
+(6, 'Cylvenda', 'cylvenda@gmail.com', '2556559992', 1, '2025-06-01 09:48:13');
 
 --
 -- Constraints for dumped tables
@@ -364,19 +289,20 @@ ALTER TABLE `categories`
 -- Constraints for table `order_items`
 --
 ALTER TABLE `order_items`
-  ADD CONSTRAINT `order_items_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `placed_orders` (`order_id`);
+  ADD CONSTRAINT `order_items_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `placed_orders` (`order_id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `placed_orders`
 --
 ALTER TABLE `placed_orders`
-  ADD CONSTRAINT `placed_orders_ibfk_1` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`employee_id`);
+  ADD CONSTRAINT `placed_orders_ibfk_1` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`employee_id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `products`
 --
 ALTER TABLE `products`
   ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`) ON DELETE CASCADE;
+SET FOREIGN_KEY_CHECKS=1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

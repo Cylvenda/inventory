@@ -73,6 +73,9 @@
         transition: 1.5s;
     }
 
+    nav .dash .a .active{
+        display: none;
+    }
     nav .nav-links ul li .btn-arrow img,
     nav .dash button {
         display: none;
@@ -104,5 +107,9 @@
     .nav-menu-link .nav-links .btn-submenu ul li span {
         font-size: 15px;
         transition: 1.5s;
+    }
+
+    .nav-menu-link .dash .a .active{
+        display: block;
     }
 }

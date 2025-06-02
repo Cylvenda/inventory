@@ -5,7 +5,7 @@
 
 <body>
     <?php require_once '../include/header.php' ?>
-    <?php require_once '../include/Nav.php' ?>
+    <?php require_once '../include/userNav.php' ?>
     <main>
 
         <!-- url container -->
@@ -17,121 +17,7 @@
             <span><button onclick="getForm()">Add New supplier</button></span>
         </div>
 
-        <div class="container-form-product" id="product-form-product">
-            <div class="container-form">
-                <div class="form-container user-form">
-                    <div class="head">
-                        <h3>Add New Suppliers</h3>
-                        <button class="close-form-btn"><img src="../img/icons/close.svg" alt=""></button>
-                    </div>
-                    <div id="msg"></div>
-                    <form id="user-form">
-                        <div class="brands">
-                            <div class="form-inputs">
-                                <label for="text">Name:</label>
-                                <input type="text" id="name" placeholder="Enter users Name">
-                                <span class="form-error" id="form-error-name"></span>
-                            </div>
-                            <div class="form-inputs">
-                                <label for="name">Email:</label>
-                                <input type="email" id="email" name="email" placeholder="Enter User Email">
-                                <span class="form-error" id="form-error-email"></span>
-                            </div>
-
-                            <div class="form-inputs">
-                                <label for="phone">Phonenumber:</label>
-                                <input type="tel" name="phone" id="phone" placeholder="Enter users Phonenumber">
-                                <span class="form-error" id="form-error-phone"></span>
-                            </div>
-
-
-                            <div class="form-inputs">
-                                <label for="status">Status:</label>
-                                <select name="status" id="status">
-                                    <option value="1">Active</option>
-                                    <option value="0">Not Active</option>
-                                </select>
-                                <span class="form-error" id="form-error-status"></span>
-                            </div>
-
-                            <div class="button-container">
-                                <button type="button" onclick="addSupplier()">Add Suppliers</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-         <div class="container-form-product" id="update-form">
-            <div class="container-form">
-                <div class="form-container user-form">
-                    <div class="head">
-                        <h3>Edit Suppliers Details</h3>
-                        <button class="close-form-btn"><img src="../img/icons/close.svg" alt=""></button>
-                    </div>
-                    <div id="msg-edit"></div>
-                    <form id="user-form">
-                        <div class="brands">
-                            <input type="hidden" id="supp-id-edit" name="supp-id-edit">
-                            <div class="form-inputs">
-
-                                <label for="text">Name:</label>
-                                <input type="text" id="edit-name" placeholder="Enter users Name">
-                                <span class="form-error" id="form-error-name"></span>
-                            </div>
-                            <div class="form-inputs">
-                                <label for="name">Email:</label>
-                                <input type="email" id="edit-email" name="email" placeholder="Enter User Email">
-                                <span class="form-error" id="form-error-email"></span>
-                            </div>
-
-                            <div class="form-inputs">
-                                <label for="phone">Phonenumber:</label>
-                                <input type="tel" name="phone" id="edit-phone" placeholder="Enter users Phonenumber">
-                                <span class="form-error" id="form-error-phone"></span>
-                            </div>
-
-
-                            <div class="button-container">
-                                <button type="button" onclick="updateSupplier()">Update Suppliers</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-                <!-- delete supplier model -->
-                <div class="container-form-product" id="delete-form">
-            <div class="container-form">
-                <div class="form-container user-form">
-                    <div class="head">
-                        <h3>Delete Supplier</h3>
-                        <button class="close-form-btn"><img src="../img/icons/close.svg" alt=""></button>
-                    </div>
-                    <div id="msg-edit"></div>
-                    <form id="user-form">
-                        <div class="brands">
-                            <div class="deletion-msg">
-
-                            </div>
-                            <div class="delete-container">
-                                <p>Are You Sure You want to Delete this Supplier...?.</p>
-                            </div>
-                            <div class="button-container">
-                                <div class="delete-button">
-                                    <button class="delete" type="button" id="delete-supplier-btn">Yes Delete</button>
-                                    <button type="button" class="close-form-btn">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-
+ 
         <div class="main-container">
             <div class="boxes">
                 <h3>Our Suppliers</h3>
@@ -163,12 +49,32 @@
                             <th>Email</th>
                             <th>Phone</th>
                             <th>Status</th>
-                            <th>Actions</th>
                         </tr>
                      </thead>
                         
-                        <tbody id="supplier-data">
+                        <tbody>
+                                           <?php
+                              $count = 0;
+                        $sql = mysqli_query($conn, "SELECT * FROM suppliers ");
+                        while ($row = mysqli_fetch_assoc($sql)) {
+                        $count++;
+                           if($row['status'] == 1 ){
+                                $status = '<span class="active">Active</span>';
+                                }else {
+                                 $status = '<span class="inactive">Not Active</span>';
+                                }
+                            echo '
+                            <tr>
+                                <td>' . $count . '</td>
+                                <td>' . $row['date'] . '</td>
+                                <td>' . $row['name'] . '</td>
+                                <td>' . $row['email'] . '</td>
+                                <td>' . $row['phone'] . '</td>
+                                <td>' . $status  . '</td>
+                            </tr>';
+                        }
 
+                        ?>
                         </tbody>
                     </table>
                 </div>

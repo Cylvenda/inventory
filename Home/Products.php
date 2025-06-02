@@ -5,7 +5,7 @@
 
 <body>
     <?php require_once '../include/header.php' ?>
-    <?php require_once '../include/Nav.php' ?>
+    <?php require_once '../include/userNav.php' ?>
     <main>
         <!-- url container -->
         <div class="url">
@@ -16,184 +16,6 @@
             <span>
                 <button onclick="getForm()">Add New Product</button>
             </span>
-            </div>
-
-
-            <div class="container-form-product" id="product-form-product">
-                <div class="container-form">
-                    <div class="form-container">
-                        <div class="head">
-                            <h3>Add New Product</h3>
-                            <button type="button" class="close-form-btn"><img src="../img/icons/close.svg"
-                                    alt="Close"></button>
-                        </div>
-                        <div id="msg"></div>
-                        <form id="product-form">
-                            <div class="form-inputs">
-                                <label for="img">Select Product Image</label>
-                                <input type="file" id="img" name="img" class="file">
-                                <span class="form-error" id="form-error-img"></span>
-                            </div>
-                            <div class="select">
-                                <div class="select-item">
-                                    <label for="brand">Select Brand:</label>
-                                    <select class="brand" id="brand" name="brand" required>
-                                        <option>-- Select Brand --</option>
-                                    </select>
-                                    <span class="form-error" id="form-error-brand"></span>
-                                </div>
-
-                                <div class="select-item">
-                                    <label for="category">Select Category:</label>
-                                    <select class="category" id="category" name="category" required>
-                                        <option value="">-- Select Brand First --</option>
-                                    </select>
-                                    <span class="form-error" id="form-error-category"></span>
-                                </div>
-
-
-                                <div class="select-item">
-                                    <label for="status">Status:</label>
-                                    <select name="status" class="status" id="status">
-                                        <option value="1">Active</option>
-                                        <option value="0">Not Active</option>
-                                    </select>
-                                    <span class="form-error" id="form-error-status"></span>
-                                </div>
-                            </div>
-
-                            <div class="form-inputs">
-                                <label for="product-name">Product Name:</label>
-                                <input type="text" class="name" id="product-name" name="product"
-                                    placeholder="Enter Product Name..">
-                                <span class="form-error" id="form-error-name"></span>
-                            </div>
-                            <div class="form-inputs">
-                                <label for="qty">Enter Quantity:</label>
-                                <input type="number" class="qty" name="qty" id="qty"
-                                    placeholder="Enter Product Quantity">
-                                <span class="form-error" id="form-error-qty"></span>
-                            </div>
-
-                            <div class="form-inputs">
-                                <label for="price">Enter Price:</label>
-                                <input type="number" class="price" name="price" id="price"
-                                    placeholder="Enter Product Price">
-                                <span class="form-error" id="form-error-price"></span>
-                            </div>
-
-                            <div class="button-container">
-                                <button type="button" onclick="addProduct()" id="addproduct">Add Product</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="update-form">
-
-                <div class="container-form-product" id="update-form">
-                    <div class="container-form">
-                        <div class="form-container">
-                            <div class="head">
-                                <h3>Update Product</h3>
-                                <button type="button" class="close-form-btn"><img src="../img/icons/close.svg"
-                                        alt="Close"></button>
-                            </div>
-                            <div id="msg"></div>
-                            <form id="product-form">
-                                <div class="form-inputs">
-                                    <label for="img">Select Product Image</label>
-                                    <input type="file" id="img" name="img" class="file">
-                                    <span class="form-error" id="form-error-img"></span>
-                                </div>
-                                <input type="hidden" id="id" name="edit-id">
-                                <div class="select">
-                                    <div class="select-item">
-                                        <label for="brand">Select Brand:</label>
-                                        <select class="brand" name="brand" required>
-                                            <option id="edit-brand"></option>
-                                        </select>
-                                        <span class="form-error" id="form-error-brand"></span>
-                                    </div>
-
-                                    <div class="select-item">
-                                        <label for="category">Select Category:</label>
-                                        <select class="category" id="edit-category" name="category" required>
-                                            <option value="">-- Select Brand First --</option>
-                                        </select>
-                                        <span class="form-error" id="form-error-category"></span>
-                                    </div>
-
-
-                                    <div class="select-item">
-                                        <label for="status">Status:</label>
-                                        <select name="status" class="edit-status" id="status">
-                                            <option value="1">Active</option>
-                                            <option value="0">Not Active</option>
-                                        </select>
-                                        <span class="form-error" id="form-error-status"></span>
-                                    </div>
-                                </div>
-
-                                <div class="form-inputs">
-                                    <label for="product-name">Product Name:</label>
-                                    <input type="text" class="name" id="edit-product-name" name="product"
-                                        placeholder="Enter Product Name..">
-                                    <span class="form-error" id="form-error-name"></span>
-                                </div>
-                                <div class="form-inputs">
-                                    <label for="qty">Enter Quantity:</label>
-                                    <input type="number" class="qty" name="qty" id="edit-qty"
-                                        placeholder="Enter Product Quantity">
-                                    <span class="form-error" id="form-error-qty"></span>
-                                </div>
-
-                                <div class="form-inputs">
-                                    <label for="price">Enter Price:</label>
-                                    <input type="number" class="price" name="price" id="edit-price"
-                                        placeholder="Enter Product Price">
-                                    <span class="form-error" id="form-error-price"></span>
-                                </div>
-
-                                <div class="button-container">
-                                    <button type="button" onclick="addProduct()" id="addproduct">Update Product</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- delete user model -->
-            <div class="container-form-product" id="delete-form">
-                <div class="container-form">
-                    <div class="form-container user-form">
-                        <div class="head">
-                            <h3>Delete Product</h3>
-                            <button class="close-form-btn"><img src="../img/icons/close.svg" alt=""></button>
-                        </div>
-                        <div id="msg-edit"></div>
-                        <form id="user-form">
-                            <div class="brands">
-                                <div class="deletion-msg">
-
-                                </div>
-                                <div class="delete-container">
-                                    <p>Are You Sure You want to Delete this Product...?.</p>
-                                </div>
-                                <div class="button-container">
-                                    <div class="delete-button">
-                                        <button class="delete" type="button" id="delete-product-btn">Yes
-                                            Delete</button>
-                                        <button type="button" class="close-form-btn">Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
             </div>
 
         </div>
@@ -223,19 +45,43 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Date Added</th>
+                                <th>Image</th>
                                 <th>Name</th>
                                 <th>Brand</th>
                                 <th>Category</th>
                                 <th>Price(TZS)</th>
                                 <th>Quantity</th>
                                 <th>Status</th>
-                                <th>Actions</th>
                             </tr>
                         </thead>
 
-                        <tbody id="product-data">
+                        <tbody>
+                            <?php
+                                                          $count = 0;
+                             $sql = mysqli_query($conn," SELECT image, P.product_id AS product_id, P.name AS product_name, B.name AS brand_name,
+        C.name AS category_name, P.price, P.quantity, P.status, P.date FROM products P JOIN categories
+        C ON P.category_id = C.category_id JOIN brands B ON C.brand_id = B.brand_id  ");
+                        while ($row = mysqli_fetch_assoc($sql)) {
+                        $count++;
+                        if($row['quantity'] > 1 ){
+                                $stock = '<span class="active">Available</span>';
+                                }else {
+                                 $stock = '<span class="inactive">Stock Out</span>';
+                                }
+                            echo '
+                            <tr>
+                                <td>' . $count . '</td>
+                        <td><img src="../img/uploads/' . $row['image'] . '" width="50" height="50" alt="' . $row['image'] . '"></td>
+                                <td>' . $row['product_name'] . '</td>
+                                <td>' . $row['brand_name'] . '</td>
+                                <td>' . $row['category_name'] . '</td>
+                                <td>' . number_format( $row['price'] ). '</td>
+                                <td>' . $row['quantity'] . '</td>
+                                <td>' .  $stock . '</td>
+                            </tr>';
+                        }
 
+                        ?>
                         </tbody>
                     </table>
                 </div>

@@ -1,4 +1,9 @@
 $(document).ready(() => {
+
+    const user = $('#user-id-edit').val()
+    getUserprofile(user)
+
+
     $(document).on('click', '#edit-btn-product', function () {
         const productId = $(this).data('id');
         getProductForEdit(productId);
@@ -10,18 +15,19 @@ $(document).ready(() => {
         getCategoryForEdit(categoryId);
         // alert(categoryId)
     });
-        $(document).on('click', '#edit-btn-brand', function () {
+
+    $(document).on('click', '#edit-btn-brand', function () {
         const brandId = $(this).data('id');
         getBrandForEdit(brandId);
         // alert(brandId)
     });
-    
 
-    $(document).on('click', '#edit-btn-user', function () {
+    $(document).on('click', '#edit-user', function () {
         const userId = $(this).data('id');
         getUserForEdit(userId)
-        //    alert(userId)
+        // alert(user)
     });
+
 
     $(document).on('click', '#edit-btn-supplier', function () {
         const supplierId = $(this).data('id');
@@ -125,7 +131,6 @@ const getUserForEdit = (userId) => {
                 $("#edit-name").val(item.name);
                 $("#edit-email").val(item.email);
                 $("#edit-phone").val(item.phone);
-                $("#edit-password").val(item.password);
 
             });
 
@@ -147,13 +152,36 @@ const getSupplierForEdit = (supplierId) => {
                 // alert(item.name)
 
                 $("#supp-id-edit").val(item.supplier_id);
-                 $("#edit-name").val(item.name);
-                 $("#edit-email").val(item.email);
-                 $("#edit-phone").val(item.phone);
-                 
+                $("#edit-name").val(item.name);
+                $("#edit-email").val(item.email);
+                $("#edit-phone").val(item.phone);
+
             });
 
             $('#update-form').css('display', 'block');
+        }
+    });
+}
+
+const getUserprofile = (user) => {
+
+    $.ajax({
+        url: '../php_action/get.php',
+        method: 'POST',
+        data: { employee_id: user },
+        dataType: 'json',
+        success: (response) => {
+
+            response.employee.map((item) => {
+                //  alert(item.name)
+
+                $("#user-id-edit").val(item.employee_id)
+                $("#edit-name").val(item.name);
+                $("#edit-email").val(item.email);
+                $("#edit-phone").val(item.phone);
+
+            });
+
         }
     });
 }

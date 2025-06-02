@@ -22,9 +22,9 @@ function user_login($conn, $email, $password) {
                         $_SESSION['user_id'] = $row['employee_id'];
                         $_SESSION['name'] = $row['name'];
                         $_SESSION['user_email'] = $row['email'];
-                        header('Location: ../Home/Dashboard');
+                        header('Location: ../Admin/Dashboard');
                         exit();
-                    }else{
+                    }else if($row['role'] == 0){
                         $_SESSION['user_id'] = $row['employee_id'];
                         $_SESSION['name'] = $row['name'];
                         $_SESSION['user_email'] = $row['email'];

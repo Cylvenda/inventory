@@ -1,4 +1,4 @@
-<?php require_once 'conn.php';
+<?php include 'conn.php';
 
 if (isset($_GET['auth'])) {
     session_unset();

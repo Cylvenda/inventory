@@ -5,7 +5,7 @@
 
 <body>
     <?php include '../include/header.php';
-    require_once '../include/userNav.php' ?>
+    require_once '../include/Nav.php'; ?>
 
     <main>
         <!-- url container -->
@@ -13,7 +13,7 @@
             <span>
                 <a href="Dashboard">Home</a> / <a href="Dashboard">Dashboard</a>
             </span>
-
+                
             <span>
                 <h2>Welcome Again <?php echo $_SESSION['name'] ?></h2>
             </span>

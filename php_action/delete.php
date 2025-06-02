@@ -89,7 +89,7 @@ if(isset($_POST['order_id'])){
     $run_query = mysqli_query($conn, $sql);
 
     if($run_query){
-        echo json_encode(['succes' => 'Order Deleted Successfully.']);
+        echo json_encode(['success' => 'Order Deleted Successfully.']);
         exit;
     }else{
         echo json_encode(['error' => 'Order is not deleted Error Occured.']);

@@ -23,14 +23,14 @@ const fethcingUserData = () => {
                         <td>${user.name}</td>
                         <td>${user.email}</td>
                         <td>${user.phone}</td>
-                        ${user.role == 1 ? `<td><span class="active">System Admin</span></td>`
+                        ${user.role == 1 ? `<td><span class="active">Admin</span></td>`
                             : `<td><span class="pending">Saler</span></td>`}
                         ${user.status == 1 ? `<td><span class="active">Active</span></td>`
                             : `<td><span class="inactive">Not Active</span></td>`}
                         <td>
                             <div class="table-button">
-                                <button id="edit-btn-user" data-id="${user.employee_id}"><img src="../img/icons/edit.svg" alt="Edit"></button>
-                                <button data-id="${user.employee_id}"><img src="../img/icons/swaping.svg" alt="Change"></button>
+                                <button id="edit-user" data-id="${user.employee_id}"><img src="../img/icons/edit.svg" alt="Edit"></button>
+                                <button id="user-status" data-id="${user.employee_id}"><img src="../img/icons/swaping.svg" alt="Change"></button>
                                 <button id="delete-user" data-id="${user.employee_id}" ><img src="../img/icons/delete_red.svg" alt=""></button>
                             </div>
                         </td>
@@ -60,7 +60,6 @@ const fethcingUserData = () => {
 }
 
 // fetching and display supplier data
-
 const fetchingSupplierData = () => {
     $.ajax({
         url: '../php_action/fetchsupplier.php',
@@ -87,7 +86,7 @@ const fetchingSupplierData = () => {
                         <td>
                             <div class="table-button">
                                 <button id="edit-btn-supplier" data-id="${supp.supplier_id}"><img src="../img/icons/edit.svg" alt="Edit"></button>
-                                <button data-id="${supp.supplier_id}"><img src="../img/icons/swaping.svg" alt="Change"></button>
+                                <button id="status-supplier" data-id="${supp.supplier_id}"><img src="../img/icons/swaping.svg" alt="Change"></button>
                                 <button id="delete-supplier" data-id="${supp.supplier_id}" ><img src="../img/icons/delete_red.svg" alt=""></button>
                             </div>
                         </td>

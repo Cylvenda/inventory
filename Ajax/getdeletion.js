@@ -3,6 +3,10 @@ $(document).on('click', '#delete-user', function () {
     const userId = $(this).data('id');
     // alert(userId)
     $('#delete-form').css('display', 'block');
+    $('.delete-container').css('display', 'block');
+    $('#delete-user-btn').css('display', 'block');
+    $('.msg-success').css('display', 'none');
+    $('.msg-error').css('display', 'none');
 
 
     $(document).on('click', '#delete-user-btn', function () {
@@ -14,9 +18,13 @@ $(document).on('click', '#delete-brand', function () {
     const brandId = $(this).data('id');
     // alert(brandId)
     $('#delete-form').css('display', 'block');
+    $('.delete-container').css('display', 'block');
+    $('#delete-brand-btn').css('display', 'block');
+    $('.msg-success').css('display', 'none');
+    $('.msg-error').css('display', 'none');
 
-        $(document).on('click', '#delete-brand-btn', function () {
-         deletebrand(brandId);
+    $(document).on('click', '#delete-brand-btn', function () {
+        deletebrand(brandId);
     });
 });
 
@@ -24,19 +32,27 @@ $(document).on('click', '#delete-category', function () {
     const categoryId = $(this).data('id');
     // alert(categoryId)
     $('#delete-form').css('display', 'block');
+    $('.delete-container').css('display', 'block');
+    $('#delete-category-btn').css('display', 'block');
+    $('.msg-success').css('display', 'none');
+    $('.msg-error').css('display', 'none');
 
-        $(document).on('click', '#delete-category-btn', function () {
-       deletecategory(categoryId);
+    $(document).on('click', '#delete-category-btn', function () {
+        deletecategory(categoryId);
     });
 });
 
 $(document).on('click', '#delete-order', function () {
-    const userId = $(this).data('id');
+    const orderId = $(this).data('id');
     // alert(userId)
     $('#delete-form').css('display', 'block');
+    $('.delete-container').css('display', 'block');
+    $('#delete-order-btn').css('display', 'block');
+    $('.msg-success').css('display', 'none');
+    $('.msg-error').css('display', 'none');
 
-        $(document).on('click', '#delete-order-btn', function () {
-       deleteorder(orderId);
+    $(document).on('click', '#delete-order-btn', function () {
+        deleteorder(orderId);
     });
 });
 
@@ -44,8 +60,12 @@ $(document).on('click', '#delete-supplier', function () {
     const supplierId = $(this).data('id');
     // alert(supplierId)
     $('#delete-form').css('display', 'block');
+    $('.delete-container').css('display', 'block');
+    $('#delete-supplier-btn').css('display', 'block');
+    $('.msg-success').css('display', 'none');
+    $('.msg-error').css('display', 'none');
 
-        $(document).on('click', '#delete-supplier-btn', function () {
+    $(document).on('click', '#delete-supplier-btn', function () {
         deletesupplier(supplierId);
     });
 });
@@ -54,9 +74,13 @@ $(document).on('click', '#delete-product', function () {
     const productId = $(this).data('id');
     // alert(productId)
     $('#delete-form').css('display', 'block');
+    $('.delete-container').css('display', 'block');
+    $('#delete-product-btn').css('display', 'block');
+    $('.msg-success').css('display', 'none');
+    $('.msg-error').css('display', 'none');
 
-        $(document).on('click', '#delete-product-btn', function () {
-       deleteproduct(productId);
+    $(document).on('click', '#delete-product-btn', function () {
+        deleteproduct(productId);
     });
 });
 
@@ -201,7 +225,7 @@ const deleteorder = (orderId) => {
         success: (response) => {
             if (response.success) {
                 $(".deletion-msg").html(`<div class='msg-success'>${response.success}</div>`);
-                fetchingOrders() 
+                fetchingOrders()
                 $('.delete-container').css('display', 'none');
                 $('#delete-order-btn').css('display', 'none');
             } else {
