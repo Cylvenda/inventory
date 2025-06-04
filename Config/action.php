@@ -26,7 +26,7 @@ function user_login($conn, $email, $password)
                         $_SESSION['role'] = $row['role'];
                         header('Location: ../Admin/Dashboard');
                         exit();
-                    } else if ($row['role'] == 'saler' || $row['role'] == 'owner' ) {
+                    } else if ($row['role'] == 'saller' || $row['role'] == 'owner' ) {
                         $_SESSION['user_id'] = $row['employee_id'];
                         $_SESSION['name'] = $row['name'];
                         $_SESSION['user_email'] = $row['email'];
