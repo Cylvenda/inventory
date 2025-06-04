@@ -56,12 +56,12 @@
                         <div class="brands">
                              <div class="deletion-msg" id="msg-edit"></div>
                             <div class="delete-container">
-                                <p>Are You Sure this order is payed by the customer
+                                <p>Are You Sure this order is Done and received by the customer
                                 </p>
                             </div>
                             <div class="button-container">
                                 <div class="delete-button">
-                                    <button class="order" type="button" id="change-order-btn">Yes Is Payed</button>
+                                    <button class="order" type="button" id="change-order-btn">Yes Done</button>
                                     <button type="button" class="close-form-btn"> Close</button>
                                 </div>
                             </div>

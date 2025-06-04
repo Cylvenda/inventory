@@ -2,7 +2,20 @@
 <nav id="nav-bar">
     <div class="dash">
         <div class="a">
-            <img class="admin" src="../img/icons/inventory.svg" alt=""> <span>Admin Dashboard</span>
+            <img class="admin" src="../img/icons/inventory.svg" alt=""> <span>
+                <?php
+                if ($_SESSION['role'] == 'admin') {
+                    echo 'Admin';
+                } elseif ($_SESSION['role'] == 'owner') {
+                    echo 'Owner';
+                } elseif ($_SESSION['role'] == 'manager') {
+                    echo 'Manager';
+                } else {
+                    $_SESSION['error'] = '<div class="msg"><span>System doesnt recognize you as a Owner or Manager</span></div>';
+                    header('Location: ../');
+                }
+                ?>
+                Dashboard</span>
         </div>
         <button class="large-media-width" onclick="menuClose()"><img src="../img/icons/close.svg" alt="Menu"></button>
         <button class="small-media-width" onclick="menuShowSmall()"><img src="../img/icons/close.svg"

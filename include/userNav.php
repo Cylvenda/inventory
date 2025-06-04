@@ -39,11 +39,6 @@
 
 
             <li>
-                <a href="Suppliers"> <img img src="../img/icons/person_bl.svg" alt=""><span>Suppliers</span> </a>
-            </li>
-
-
-            <li>
                 <a href="../Config/logout?auth=<?php echo $_SESSION['user_id']; ?>">
                     <img src="../img/icons/logout_b.svg"> <span>Logout</span>
                 </a>

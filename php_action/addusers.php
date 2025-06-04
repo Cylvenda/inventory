@@ -6,7 +6,7 @@ $name = htmlspecialchars(trim($_POST['name']));
 $email = htmlspecialchars(trim($_POST['email']));
 $phone = htmlspecialchars(trim($_POST['phone']));
 $password = htmlspecialchars(trim($_POST['password']));
-$role = intval($_POST['role']);
+$role = htmlspecialchars(trim($_POST['role']));
 $status = intval($_POST['status']);
 
 $check_stmt = $conn->prepare("SELECT * FROM employee WHERE email = ?");
@@ -21,7 +21,7 @@ if ($check_stmt->get_result()->num_rows > 0) {
 $newpass = password_hash($password, PASSWORD_DEFAULT);
 
 $insert_stmt = $conn->prepare("INSERT INTO employee (name, email, password, phone, role, status) VALUES (?, ?, ?, ?, ?, ?)");
-$insert_stmt->bind_param("ssssii", $name, $email, $newpass, $phone, $role, $status);
+$insert_stmt->bind_param("sssssi", $name, $email, $newpass, $phone, $role, $status);
 
 if ($insert_stmt->execute()) {
     echo json_encode(["success" => "User Added successfully"]);

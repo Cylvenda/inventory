@@ -55,8 +55,11 @@
                                 <div class="select-item">
                                     <label for="status">Role:</label>
                                     <select name="status" id="role">
-                                        <option value="1">Admin</option>
-                                        <option value="0">Saler</option>
+                                        <option value="admin">Admin</option>
+                                        <option value="owner">Owner</option>
+                                        <option value="manager">Manager</option>
+                                        <option value="saler">Saler</option>
+                                        <option value="employee">Employee</option>
                                     </select>
                                     <span class="form-error" id="form-error-role"></span>
                                 </div>

@@ -61,8 +61,8 @@ if(isset($_POST['order_id'])){
 
     $row = $result->fetch_assoc();
 
-    if($row['payment_status'] == 0 ){
-        $stmt = $conn->prepare("UPDATE placed_orders SET payment_status = ? WHERE order_id = ?");
+    if($row['status'] == 0 ){
+        $stmt = $conn->prepare("UPDATE placed_orders SET status = ? WHERE order_id = ?");
         $stmt->bind_param("ii", $one, $order_id);
 
         if ($stmt->execute()) {
@@ -74,8 +74,8 @@ if(isset($_POST['order_id'])){
         $stmt->close();
         exit;
     }
-    }elseif($row['payment_status'] == 1 ) {
-                $stmt = $conn->prepare("UPDATE placed_orders SET payment_status  = ? WHERE order_id = ?");
+    }elseif($row['status'] == 1 ) {
+                $stmt = $conn->prepare("UPDATE placed_orders SET status  = ? WHERE order_id = ?");
         $stmt->bind_param("ii", $zero, $order_id);
 
         if ($stmt->execute()) {

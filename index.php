@@ -21,7 +21,7 @@
                     <p>This is where we track and manage the stock and our suplliers details, </p>
                 </li>
                 <li>
-                    <p>So You have to Login with the right cridentials fromyour system admin</p>
+                    <p>So You have to Login with the right cridentials from your system admin</p>
                 </li>
             </ul>
         </div>

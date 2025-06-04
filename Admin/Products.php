@@ -224,9 +224,9 @@
                             <tr>
                                 <th>#</th>
                                 <th>Date Added</th>
-                                <th>Name</th>
                                 <th>Brand</th>
                                 <th>Category</th>
+                                <th>Name</th>
                                 <th>Price(TZS)</th>
                                 <th>Quantity</th>
                                 <th>Status</th>

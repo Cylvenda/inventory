@@ -26,9 +26,9 @@ const fetchProducts = () => {
                     <tr >
                         <td>${count}</td>
                          <td><img src="../img/uploads/${product.image}" width="50" height="50" alt="${product.product_name}"></td>
-                        <td>${product.product_name}</td>
                         <td>${product.brand_name}</td>
                         <td>${product.category_name}</td>
+                        <td>${product.product_name}</td>
                         <td>${formattedPrice}</td>
                         <td>${product.quantity}</td>
                         ${product.quantity > 1 ? `<td><span class="active">Available</span></td>`
@@ -190,7 +190,7 @@ const fetchingOrders = () => {
                         <td>${order.payed_amount}</td>
                         ${order.status == 1 ? `<td><span class="active">Done</span></td>`
                             : `<td><span class="pending">Pending</span></td>`}
-                        ${order.payment_status == 1 ? `<td><span class="active">Payed</span></td>`
+                        ${order.total_price == order.payed_amount ? `<td><span class="active">Payed</span></td>`
                             : `<td><span class="inactive">Not Payed</span></td>`}
                         <td>
                             <div class="table-button">

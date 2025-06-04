@@ -5,7 +5,3 @@ if (!isset($_SESSION['user_id'])) {
   header('Location: ../');
   exit();
 }
-
-
-// 36M0819040
-// UTM9583887

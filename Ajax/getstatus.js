@@ -112,8 +112,9 @@ const changeOrder = (orderId) => {
             if (response.success) {
                 $(".deletion-msg").html(`<div class='msg-success'>${response.success}</div>`);
                  $('#change-order-btn').css('display', 'none');
-                fetchingOrders()
                 $('.delete-container').css('display', 'none');
+                fetchingOrders();
+                // clearSelection();
             } else {
                 $("#msg-edit").html(`<div class='msg-error'>${response.error}</div>`);
             }
