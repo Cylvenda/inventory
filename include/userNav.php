@@ -36,8 +36,19 @@
             <li>
                 <a href="Orders"> <img img src="../img/icons/orders_b.svg" alt=""><span>Orders</span> </a>
             </li>
+            <?php
+            if ($_SESSION['role'] == 'owner') {
+                echo '
+                    <li>
+                        <a href="Suppliers"> <img img src="../img/icons/person_bl.svg" alt=""><span>Suppliers</span> </a>
+                    </li>
 
-
+                    <li>
+                        <a href="Employees"> <img img src="../img/icons/group_manage.svg" alt=""><span>Employees</span> </a>
+                    </li>
+                    ';
+            }
+            ?>
             <li>
                 <a href="../Config/logout?auth=<?php echo $_SESSION['user_id']; ?>">
                     <img src="../img/icons/logout_b.svg"> <span>Logout</span>

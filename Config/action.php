@@ -19,14 +19,14 @@ function user_login($conn, $email, $password)
 
             if (password_verify($password, $row["password"])) {
                 if ($row['status'] == 1) {
-                    if ($row['role'] == 'admin' || $row['role'] == 'owner' || $row['role'] == 'manager') {
+                    if ($row['role'] == 'admin' || $row['role'] == 'manager') {
                         $_SESSION['user_id'] = $row['employee_id'];
                         $_SESSION['name'] = $row['name'];
                         $_SESSION['user_email'] = $row['email'];
                         $_SESSION['role'] = $row['role'];
                         header('Location: ../Admin/Dashboard');
                         exit();
-                    } else if ($row['role'] == 'saler') {
+                    } else if ($row['role'] == 'saler' || $row['role'] == 'owner' ) {
                         $_SESSION['user_id'] = $row['employee_id'];
                         $_SESSION['name'] = $row['name'];
                         $_SESSION['user_email'] = $row['email'];

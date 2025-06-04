@@ -23,8 +23,11 @@ const fethcingUserData = () => {
                         <td>${user.name}</td>
                         <td>${user.email}</td>
                         <td>${user.phone}</td>
-                        ${user.role == 1 ? `<td><span class="active">Admin</span></td>`
-                            : `<td><span class="pending">Saler</span></td>`}
+                        ${user.role == 'admin' ? `<td><span class="pending">Admin</span></td>` :
+                            user.role == 'owner' ? `<td><span class="pending">Owner</span></td>` :
+                                user.role == 'manager' ? `<td><span class="pending">Manager</span></td>` :
+                                    user.role == 'saller' ? `<td><span class="pending">Saller</span></td>` :
+                                        `<td><span class="pending">Employee</span></td>`}
                         ${user.status == 1 ? `<td><span class="active">Active</span></td>`
                             : `<td><span class="inactive">Not Active</span></td>`}
                         <td>

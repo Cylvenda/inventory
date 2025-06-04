@@ -103,16 +103,11 @@
                             </div>
                             <div id="msg"></div>
                             <form id="product-form">
-                                <div class="form-inputs">
-                                    <label for="img">Select Product Image</label>
-                                    <input type="file" id="img" name="img" class="file">
-                                    <span class="form-error" id="form-error-img"></span>
-                                </div>
                                 <input type="hidden" id="id" name="edit-id">
                                 <div class="select">
                                     <div class="select-item">
                                         <label for="brand">Select Brand:</label>
-                                        <select class="brand" name="brand" required>
+                                        <select class="brand" id="brand" required>
                                             <option id="edit-brand"></option>
                                         </select>
                                         <span class="form-error" id="form-error-brand"></span>
@@ -120,7 +115,7 @@
 
                                     <div class="select-item">
                                         <label for="category">Select Category:</label>
-                                        <select class="category" id="edit-category" name="category" required>
+                                        <select class="category" id="category" name="category" required>
                                             <option value="">-- Select Brand First --</option>
                                         </select>
                                         <span class="form-error" id="form-error-category"></span>

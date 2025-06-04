@@ -47,6 +47,7 @@ $(document).on('click', '#status-supplier', function () {
 
 // removing all popups on delete
 $(document).on('click', '.close-form-btn', () => {
+    orderId = null;
     $('#status-form').hide();
 });
 
@@ -114,7 +115,6 @@ const changeOrder = (orderId) => {
                  $('#change-order-btn').css('display', 'none');
                 $('.delete-container').css('display', 'none');
                 fetchingOrders();
-                // clearSelection();
             } else {
                 $("#msg-edit").html(`<div class='msg-error'>${response.error}</div>`);
             }
