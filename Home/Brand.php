@@ -33,7 +33,7 @@
                         </div>
 
                         <div class="search">
-                            <input type="text"><button>Search</button>
+                            <input id="search-brand" type="text"><button>Search</button>
                         </div>
 
                     </div>
@@ -46,21 +46,8 @@
                                 <th>Brand Name</th>
                             </tr>
                         </thead>
-                        <tbody>
-                             <?php
-                              $count = 0;
-                        $sql = mysqli_query($conn, "SELECT * FROM brands ");
-                        while ($row = mysqli_fetch_assoc($sql)) {
-                        $count++;
-                            echo '
-                            <tr>
-                                <td>' . $count . '</td>
-                                <td>' . $row['date'] . '</td>
-                                <td>' . $row['name'] . '</td>
-                            </tr>';
-                        }
+                        <tbody id="brand-data-user">
 
-                        ?>
                         </tbody>
                     </table>
                 </div>
@@ -69,4 +56,4 @@
     </main>
 </body>
 
-<?php require_once '../include/footer.php' ?>
+<?php require_once '../include/userfooter.php' ?>

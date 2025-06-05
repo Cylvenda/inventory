@@ -174,4 +174,4 @@
         </div>
     </main>
 
-    <?php include '../include/Footer.php'; ?>
+<?php require_once '../include/userfooter.php' ?>

@@ -33,10 +33,21 @@
 
             </li>
 
+            <?php
+
+            if ($_SESSION['role'] == 'saller') {
+                echo '
             <li>
                 <a href="Orders"> <img img src="../img/icons/orders_b.svg" alt=""><span>Orders</span> </a>
-            </li>
-            <?php
+            </li>';
+            }else{
+                echo '
+                <li>
+                    <a href="Order"> <img img src="../img/icons/orders_b.svg" alt=""><span>Orders</span> </a>
+                </li>
+                ';
+            }
+
             if ($_SESSION['role'] == 'owner') {
                 echo '
                     <li>

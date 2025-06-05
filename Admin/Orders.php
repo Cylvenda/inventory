@@ -130,7 +130,7 @@
                         </div>
 
                         <div class="search">
-                            <input type="text"><button>Search</button>
+                            <input id="search-order" type="text"><button>Search</button>
                         </div>
 
                     </div>

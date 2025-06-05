@@ -34,7 +34,7 @@
                         </div>
 
                         <div class="search">
-                            <input type="text"><button>Search</button>
+                            <input id="search-category" type="text"><button>Search</button>
                         </div>
 
                     </div>
@@ -48,23 +48,7 @@
                                 <th>Brand Name</th>
                             </tr>
                         </thead>
-                        <tbody >
-                                                         <?php
-                              $count = 0;
-                             $sql = mysqli_query($conn,"SELECT C.*, B.name AS brand_name FROM categories C JOIN brands B
-                              ON C.brand_id = B.brand_id ORDER BY B.name ASC");
-                        while ($row = mysqli_fetch_assoc($sql)) {
-                        $count++;
-                            echo '
-                            <tr>
-                                <td>' . $count . '</td>
-                                <td>' . $row['date'] . '</td>
-                                <td>' . $row['name'] . '</td>
-                                <td>' . $row['brand_name'] . '</td>
-                            </tr>';
-                        }
-
-                        ?>
+                        <tbody id="category-data-user">
                         </tbody>
                     </table>
                 </div>
@@ -73,4 +57,4 @@
     </main>
 </body>
 
-<?php require_once '../include/footer.php' ?>
+<?php require_once '../include/userfooter.php' ?>

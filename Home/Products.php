@@ -34,7 +34,7 @@
                         </div>
 
                         <div class="search">
-                            <input type="text"><button>Search</button>
+                            <input id="search-product" type="text"><button>Search</button>
                         </div>
 
                     </div>
@@ -53,33 +53,8 @@
                             </tr>
                         </thead>
 
-                        <tbody>
-                            <?php
-                                                          $count = 0;
-                             $sql = mysqli_query($conn," SELECT image, P.product_id AS product_id, P.name AS product_name, B.name AS brand_name,
-        C.name AS category_name, P.price, P.quantity, P.status, P.date FROM products P JOIN categories
-        C ON P.category_id = C.category_id JOIN brands B ON C.brand_id = B.brand_id  ");
-                        while ($row = mysqli_fetch_assoc($sql)) {
-                        $count++;
-                        if($row['quantity'] > 1 ){
-                                $stock = '<span class="active">Available</span>';
-                                }else {
-                                 $stock = '<span class="inactive">Stock Out</span>';
-                                }
-                            echo '
-                            <tr>
-                                <td>' . $count . '</td>
-                        <td><img src="../img/uploads/' . $row['image'] . '" width="50" height="50" alt="' . $row['image'] . '"></td>
-                                <td>' . $row['product_name'] . '</td>
-                                <td>' . $row['brand_name'] . '</td>
-                                <td>' . $row['category_name'] . '</td>
-                                <td>' . number_format( $row['price'] ). '</td>
-                                <td>' . $row['quantity'] . '</td>
-                                <td>' .  $stock . '</td>
-                            </tr>';
-                        }
+                        <tbody id="product-data-user">
 
-                        ?>
                         </tbody>
                     </table>
                 </div>
@@ -88,4 +63,4 @@
     </main>
 </body>
 
-<?php require_once '../include/footer.php' ?>
+<?php require_once '../include/userfooter.php' ?>

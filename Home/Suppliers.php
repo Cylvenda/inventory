@@ -35,7 +35,7 @@
                         </div>
 
                         <div class="search">
-                            <input type="text"><button>Search</button>
+                            <input id="search-supplier" type="text"><button>Search</button>
                         </div>
 
                     </div>
@@ -52,29 +52,8 @@
                         </tr>
                      </thead>
                         
-                        <tbody>
-                                           <?php
-                              $count = 0;
-                        $sql = mysqli_query($conn, "SELECT * FROM suppliers ");
-                        while ($row = mysqli_fetch_assoc($sql)) {
-                        $count++;
-                           if($row['status'] == 1 ){
-                                $status = '<span class="active">Active</span>';
-                                }else {
-                                 $status = '<span class="inactive">Not Active</span>';
-                                }
-                            echo '
-                            <tr>
-                                <td>' . $count . '</td>
-                                <td>' . $row['date'] . '</td>
-                                <td>' . $row['name'] . '</td>
-                                <td>' . $row['email'] . '</td>
-                                <td>' . $row['phone'] . '</td>
-                                <td>' . $status  . '</td>
-                            </tr>';
-                        }
+                        <tbody id="supplier-data-user">
 
-                        ?>
                         </tbody>
                     </table>
                 </div>
@@ -83,4 +62,4 @@
     </main>
 </body>
 
-<?php require_once '../include/footer.php' ?>
+<?php require_once '../include/userfooter.php' ?>

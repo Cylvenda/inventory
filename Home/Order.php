@@ -9,15 +9,18 @@
     <main>
         <!-- url container -->
         <div class="url">
-            <span><a href="Dashboard">Home</a> / <a href="Users">Employees</a></span>
+            <span><a href="Dashboard">Home</a> / <a href="Orders">Orders</a></span>
             <span>
-                <h3>Employees Management</h3>
+                <h3>Orders Management</h3>
             </span>
+            
         </div>
+
+
 
         <div class="main-container">
             <div class="boxes">
-                <h3>All System Users</h3>
+                <h3>Placed Orders</h3>
                 <div class="table-container">
 
                     <div class="search-container">
@@ -32,7 +35,7 @@
                         </div>
 
                         <div class="search">
-                            <input id="search-user" type="text"><button>Search</button>
+                            <input id="order-user-search" type="text"><button>Search</button>
                         </div>
 
                     </div>
@@ -42,15 +45,16 @@
                             <tr>
                                 <th>#</th>
                                 <th>Date Added</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Phone</th>
-                                <th>Role</th>
-                                <th>Status</th>
+                                <th>Client Name</th>
+                                <th>Total Items</th>
+                                <th>Total Amount</th>
+                                <th>Payed Amount</th>
+                                <th>Order Status</th>
+                                <th>Payment Status</th>
                             </tr>
                         </thead>
-                        <tbody id="user-data-user">
-
+                        <tbody id="order-data-user">
+                
                         </tbody>
                     </table>
                 </div>
