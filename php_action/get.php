@@ -7,7 +7,7 @@ if (isset($_POST['product_id'])) {
 
 
     $sql = mysqli_query($conn, "SELECT P.product_id AS id, P.name AS product_name, B.name AS brand_name,
-        C.name AS employee_name, P.price, P.quantity FROM products P JOIN categories C ON P.category_id = C.category_id
+        C.name AS category_name, P.price, P.quantity FROM products P JOIN categories C ON P.category_id = C.category_id
          JOIN brands B ON C.brand_id = B.brand_id WHERE P.product_id = '$product_id'  ");
     if (mysqli_num_rows($sql) > 0) {
         $products = [];
@@ -78,7 +78,6 @@ if (isset($_POST['employee_id'])) {
     echo json_encode(["employee" => $employee]);
 }
 
-
 if (isset($_POST['supplier_id'])) {
 
     $supplier_id = intval($_POST['supplier_id']);
@@ -95,6 +94,24 @@ if (isset($_POST['supplier_id'])) {
         $supplier[] = $row;
     }
     echo json_encode(["supplier" => $supplier]);
+}
+
+if (isset($_POST['order_id'])) {
+
+    $order_id = intval($_POST['order_id']);
+
+    $query = "SELECT * FROM Placed_orders WHERE order_id = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("i", $order_id);
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+    $order = [];
+
+    while ($row = $result->fetch_assoc()) {
+        $order[] = $row;
+    }
+    echo json_encode(["order" => $order]);
 }
 
 $conn->close();

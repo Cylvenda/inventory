@@ -1,3 +1,4 @@
+
 const updateBrand = () => {
     const name = $("#edit-brand").val().trim();
     const brandId = $('#edit-brand_id').val();
@@ -32,8 +33,8 @@ const updateBrand = () => {
 
 const updateCategory = () => {
 
-    const name = $("#edit-brand").val().trim();
-    const categoryId = $('#edit-category_id').val();
+    const name = $("#edit-category-name").val().trim();
+    const categoryId = $('#edit-category-id').val();
 
 
     // Clear previous messages
@@ -43,13 +44,48 @@ const updateCategory = () => {
     $.ajax({
         url: "../php_action/updates.php",
         method: "POST",
-        data: { name: name, category_id: categoryId },
+        data: {  category_id: categoryId, name: name },
         dataType: "json",
         success: (response) => {
             if (response.success) {
                 $("#edit-msg").html(`<div class='msg-success'>${response.success}</div>`);
+                fetchProductsCategory()
                 //  fetchProductsBrands();
                 // $("#edit-category-form")[0].reset();
+            } else {
+                $("#edit-msg").html(`<div class='msg-error'>${response.error}</div>`);
+            }
+        },
+        error: (xhr, status, error) => {
+            let errorMsg = xhr.responseJSON?.error || error;
+            $("#edit-msg").html(`<div class='msg-error'>Error: ${errorMsg}</div>`);
+            console.error("AJAX Error:", error);
+        }
+    });
+};
+
+const updateProduct = () => {
+
+    const productId = $('#edit-product_id').val();
+    const Newprice = $("#edit-price").val().trim();
+    const name = $("#edit-product-name").val().trim();
+    const newQty = $("#edit-qty").val().trim();
+
+
+    // Clear previous messages
+    $("#edit-msg").empty();
+    $("#form-error-prodoct").empty();
+
+    $.ajax({
+        url: "../php_action/updates.php",
+        method: "POST",
+        data: { product_id: productId, name: name, price: Newprice, qty: newQty },
+        dataType: "json",
+        success: (response) => {
+            if (response.success) {
+                $("#edit-msg").html(`<div class='msg-success'>${response.success}</div>`);
+                fetchProducts()
+
             } else {
                 $("#edit-msg").html(`<div class='msg-error'>${response.error}</div>`);
             }
@@ -99,6 +135,7 @@ const updateUser = () => {
     const phone = $("#edit-phone").val();
     const user_id = $("#user-id-edit").val();
 
+    $("#msg-edit").empty();
 
     $.ajax({
         url: "../php_action/updates.php",
@@ -109,7 +146,7 @@ const updateUser = () => {
             if (response.success) {
                 $("#msg-edit").html(`<div class='msg-success'>${response.success}</div>`);
                 fethcingUserData();
-                
+
                 //  $("#update-form").hide();
             } else {
                 $("#msg-edit").html(`<div class='msg-error'>${response.error}</div>`);
@@ -190,4 +227,35 @@ const validatePassword = (oldPass, newPass, comfrmNewPass) => {
 
     return valid;
 
+}
+
+const updateorder = () => {
+    const orderId = $('#order-id-edit').val();
+    const Newprice = $("#due-amount").val().trim();
+    const method = $("#pmethod").val().trim();
+
+    // Clear previous messages
+
+
+    $.ajax({
+        url: "../php_action/updates.php",
+        method: "POST",
+        data: { order_id: orderId, price: Newprice, method: method },
+        dataType: "json",
+        success: (response) => {
+            if (response.success) {
+                $("#edit-msg").html(`<div class='msg-success'>${response.success}</div>`);
+                fetchingOrders();
+
+
+            } else {
+                $("#edit-msg").html(`<div class='msg-error'>${response.error}</div>`);
+            }
+        },
+        error: (xhr, status, error) => {
+            let errorMsg = xhr.responseJSON?.error || error;
+            $("#edit-msg").html(`<div class='msg-error'>Error: ${errorMsg}</div>`);
+            console.error("AJAX Error:", error);
+        }
+    });
 }

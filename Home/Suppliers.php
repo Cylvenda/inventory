@@ -35,7 +35,7 @@
                         </div>
 
                         <div class="search">
-                            <input id="search-supplier" type="text"><button>Search</button>
+                            <input id="search-supplier" autocomplete="off" type="text"><button>Search</button>
                         </div>
 
                     </div>

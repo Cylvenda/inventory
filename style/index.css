@@ -102,6 +102,31 @@ body {
     text-transform: capitalize;
 }
 
+
+.error{
+    width: 100%;
+    background-color: red;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    user-select: none;
+
+    hr{
+        border: 1px solid white;
+    }
+    h3{
+        padding: 10px;
+        text-transform: uppercase;
+    }
+
+    p{
+        padding: 10px;
+    }
+    span{
+        font-size: 13px;
+    }
+}
+
 @media only screen and (max-width: 790px) {
     .container-form .head{
         width: 100%;

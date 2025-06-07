@@ -66,16 +66,15 @@
                             <h3>Add New Category</h3>
                             <button class="close-form-btn"><img src="../img/icons/close.svg" alt=""></button>
                         </div>
-                        <div id="msg" class="msg">
+                        <div id="edit-msg" class="msg">
 
                         </div>
-                        <input type="hidden" id="edit-category-id" name="edit-category-id">
+
                         <form id="category-form">
+                            <input type="hidden" id="edit-category-id" name="edit-category-id">
                             <div class="form-inputs">
                                 <label for="category">Select Brand:</label>
-                                <select required>
-                                    <option><span id="edit-brand-category"></span></option>
-                                </select>
+                                <input type="text" id="edit-brand-category" disabled>
                                 <span class="form-error" id="form-error-category"></span>
                             </div>
 
@@ -143,7 +142,7 @@
                         </div>
 
                         <div class="search">
-                            <input id="search-category" type="text"><button>Search</button>
+                            <input id="search-category" autocomplete="off" type="text"><button>Search</button>
                         </div>
 
                     </div>

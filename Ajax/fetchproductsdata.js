@@ -25,14 +25,14 @@ const fetchProducts = () => {
                     tableRows += `
                     <tr >
                         <td>${count}</td>
-                         <td><img src="../img/uploads/${product.image}" width="50" height="50" alt="${product.product_name}"></td>
+                         <td><img class="img" src="../img/uploads/${product.image}" width="50" height="50" alt="${product.product_name}"></td>
                         <td>${product.brand_name}</td>
                         <td>${product.category_name}</td>
                         <td>${product.product_name}</td>
                         <td>${formattedPrice}</td>
                         <td>${product.quantity}</td>
                         ${product.quantity > 1 ? `<td><span class="active">Available</span></td>`
-                            : `<td><span class="inactive">Stock Out</span></td>`}
+                            : `<td><span class="inactive">StockOut</span></td>`}
                            <td> 
                             <div class="table-button">
                                 <button id="edit-btn-product" data-id="${product.product_id}"><img src="../img/icons/edit.svg" alt="Edit"></button>
@@ -190,7 +190,7 @@ const fetchingOrders = () => {
                         <td>${order.payed_amount}</td>
                         ${order.status == 1 ? `<td><span class="active">Received</span></td>`
                             : `<td><span class="pending">Progress</span></td>`}
-                        ${order.total_price == order.payed_amount ? `<td><span class="active">Payed</span></td>`
+                        ${order.payed_amount >= order.total_price  ? `<td><span class="active">Payed</span></td>`
                             : `<td><span class="inactive">Pending</span></td>`}
                         <td>
                             <div class="table-button">

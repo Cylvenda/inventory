@@ -34,7 +34,7 @@
                         </div>
 
                         <div class="search">
-                            <input id="search-product" type="text"><button>Search</button>
+                            <input id="search-product" autocomplete="off" type="text"><button>Search</button>
                         </div>
 
                     </div>
@@ -44,9 +44,9 @@
                             <tr>
                                 <th>#</th>
                                 <th>Image</th>
-                                <th>Name</th>
                                 <th>Brand</th>
                                 <th>Category</th>
+                                 <th>Name</th>
                                 <th>Price(TZS)</th>
                                 <th>Quantity</th>
                                 <th>Status</th>

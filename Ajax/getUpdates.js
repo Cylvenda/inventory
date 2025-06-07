@@ -7,24 +7,28 @@ $(document).ready(() => {
     $(document).on('click', '#edit-btn-product', function () {
         const productId = $(this).data('id');
         getProductForEdit(productId);
+        $('#edit-msg').html('');
         // alert(productId)
     });
 
     $(document).on('click', '#edit-btn-category', function () {
         const categoryId = $(this).data('id');
         getCategoryForEdit(categoryId);
+        $('#edit-msg').html('');
         // alert(categoryId)
     });
 
     $(document).on('click', '#edit-btn-brand', function () {
         const brandId = $(this).data('id');
         getBrandForEdit(brandId);
+        $('#edit-msg').html('');
         // alert(brandId)
     });
 
     $(document).on('click', '#edit-user', function () {
         const userId = $(this).data('id');
         getUserForEdit(userId)
+        $('#edit-msg').html('');
         // alert(user)
     });
 
@@ -32,18 +36,24 @@ $(document).ready(() => {
     $(document).on('click', '#edit-btn-supplier', function () {
         const supplierId = $(this).data('id');
         getSupplierForEdit(supplierId)
+        $('#edit-msg').html('');
         //    alert(supplierId)
+    });
+
+    $(document).on('click', '#edit-btn-order', function () {
+        const orderId = $(this).data('id');
+        getOrderForEdit(orderId)
+        $('#edit-msg').html('');
     });
 
     // closing it
     $(document).on('click', '.close-form-btn', () => {
         $('#update-form').hide();
+
     });
 });
 
 const getProductForEdit = (productId) => {
-
-
 
     $.ajax({
         url: '../php_action/get.php',
@@ -55,13 +65,13 @@ const getProductForEdit = (productId) => {
             response.products.map((item) => {
                 // alert(item.product_name)
 
-                $('#edit-id').val(item.id);
+                $('#edit-product_id').val(item.id);
                 $('#edit-product-name').val(item.product_name);
                 $('#edit-price').val(item.price);
                 $('#edit-qty').val(item.quantity);
                 $('#edit-brand').val(item.brand_name);
                 $('#edit-category').val(item.category_name);
-                $('#edit-status').val(item.status);
+                $('#edit-status').val(item.status = 'Active' );
             });
 
             $('#update-form').css('display', 'block');
@@ -104,7 +114,7 @@ const getCategoryForEdit = (categoryId) => {
             response.categories.map((item) => {
                 // alert(item.brand_name)
 
-                $('#edit-category-id').val(item.brand_id);
+                $('#edit-category-id').val(item.category_id);
                 $('#edit-brand-category').val(item.brand_name);
                 $('#edit-category-name').val(item.category_name);
 
@@ -182,6 +192,34 @@ const getUserprofile = (user) => {
 
             });
 
+        }
+    });
+}
+
+const getOrderForEdit = (orderId) => {
+
+    $.ajax({
+        url: '../php_action/get.php',
+        method: 'POST',
+        data: { order_id: orderId },
+        dataType: 'json',
+        success: (response) => {
+
+            response.order.map((item) => {
+                // alert(item.name)
+
+                $("#order-id-edit").val(item.order_id);
+                $("#cname").val(item.client_name);
+                $("#cemail").val(item.client_email);
+                $("#cphone").val(item.client_phone);
+                $("#amount").val(item.subtotal);
+                $("#due-amount").val(item.payed_amount);
+                $("#total").val(item.total_price);
+                $("#pmethod").val(item.payment_method);
+
+            });
+
+            $('#update-form').css('display', 'block');
         }
     });
 }

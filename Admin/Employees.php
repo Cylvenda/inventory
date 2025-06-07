@@ -188,7 +188,7 @@
                         </div>
 
                         <div class="search">
-                            <input id="search-user" type="text"><button>Search</button>
+                            <input id="search-user" autocomplete="off" type="text"><button>Search</button>
                         </div>
 
                     </div>

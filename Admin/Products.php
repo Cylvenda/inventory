@@ -101,34 +101,26 @@
                                 <button type="button" class="close-form-btn"><img src="../img/icons/close.svg"
                                         alt="Close"></button>
                             </div>
-                            <div id="msg"></div>
+                            <div class="edit-msg" id="edit-msg"></div>
                             <form id="product-form">
-                                <input type="hidden" id="id" name="edit-id">
+                                <input type="hidden" id="edit-product_id" name="edit-id">
                                 <div class="select">
                                     <div class="select-item">
                                         <label for="brand">Select Brand:</label>
-                                        <select class="brand" id="brand" required>
-                                            <option id="edit-brand"></option>
-                                        </select>
-                                        <span class="form-error" id="form-error-brand"></span>
+                                        <input disabled id="edit-brand" type="text">
+                                     
                                     </div>
 
                                     <div class="select-item">
                                         <label for="category">Select Category:</label>
-                                        <select class="category" id="category" name="category" required>
-                                            <option value="">-- Select Brand First --</option>
-                                        </select>
-                                        <span class="form-error" id="form-error-category"></span>
+                                        <input disabled id="edit-category" type="text">
+                                       
                                     </div>
 
 
                                     <div class="select-item">
                                         <label for="status">Status:</label>
-                                        <select name="status" class="edit-status" id="status">
-                                            <option value="1">Active</option>
-                                            <option value="0">Not Active</option>
-                                        </select>
-                                        <span class="form-error" id="form-error-status"></span>
+                                        <input disabled id="edit-status" type="text">
                                     </div>
                                 </div>
 
@@ -153,7 +145,7 @@
                                 </div>
 
                                 <div class="button-container">
-                                    <button type="button" onclick="addProduct()" id="addproduct">Update Product</button>
+                                    <button type="button" onclick="updateProduct()" id="addproduct">Update Product</button>
                                 </div>
                             </form>
                         </div>

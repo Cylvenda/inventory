@@ -374,6 +374,7 @@ table td .table-button {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
+    user-select: none;
 }
 table td span{
     cursor: pointer;
@@ -384,6 +385,7 @@ table td button {
     border: none;
     background-color: inherit;
     cursor: pointer;
+    user-select: none;
 }
 
 table td .pending {

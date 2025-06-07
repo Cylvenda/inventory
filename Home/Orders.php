@@ -46,7 +46,7 @@
         </div>
 
         <div class="container-form-product" id="status-form">
-                    <div class="container-form">
+            <div class="container-form">
                 <div class="form-container user-form">
                     <div class="head">
                         <h3>Employee Status</h3>
@@ -54,14 +54,14 @@
                     </div>
                     <form id="user-form">
                         <div class="brands">
-                             <div class="deletion-msg" id="msg-edit"></div>
+                            <div class="deletion-msg" id="msg-edit"></div>
                             <div class="delete-container">
-                                <p>Are You Sure this order is Done and received by the customer
+                                <p>Are You Sure you want to change this order status
                                 </p>
                             </div>
                             <div class="button-container">
                                 <div class="delete-button">
-                                    <button class="order" type="button" id="change-order-btn">Yes Done</button>
+                                    <button class="order" type="button" id="change-order-btn">Yes Sure</button>
                                     <button type="button" class="close-form-btn"> Close</button>
                                 </div>
                             </div>
@@ -71,47 +71,64 @@
             </div>
         </div>
 
-                    <div class="container-form-product" id="product-form-product">
-                <div class="container-form">
-                    <div class="form-container">
-                        <div class="head">
-                            <h3>Order Details</h3>
-                            <button type="button" class="close-form-btn"><img src="../img/icons/close.svg"
-                                    alt="Close"></button>
-                        </div>
-                        <div id="msg"></div>
-                        <form id="product-form">
-                            <div class="form-inputs">
-                                <label for="img">Client Name:</label>
-                                <input type="file" id="cname" >
-                            </div>
-
-                            <div class="form-inputs">
-                                <label for="product-name">Client Email:</label>
-                                <input type="text"  id="cemail" >
-                                <span class="form-error" id="form-error-name"></span>
-                            </div>
-                            <div class="form-inputs">
-                                <label for="qty">Total Order Quantity:</label>
-                                <input type="number" class="qty" name="qty" id="qty"
-                                    placeholder="Enter Product Quantity">
-                                <span class="form-error" id="form-error-qty"></span>
-                            </div>
-
-                            <div class="form-inputs">
-                                <label for="price">Enter Price:</label>
-                                <input type="number" class="price" name="price" id="price"
-                                    placeholder="Enter Product Price">
-                                <span class="form-error" id="form-error-price"></span>
-                            </div>
-
-                            <div class="button-container">
-                                <button class="close-form-btn" type="button">Close</button>
-                            </div>
-                        </form>
+        <div class="container-form-product" id="update-form">
+            <div class="container-form">
+                <div class="form-container">
+                    <div class="head">
+                        <h3>Edit Order Details</h3>
+                        <button type="button" class="close-form-btn"><img src="../img/icons/close.svg"
+                                alt="Close"></button>
                     </div>
+                    <div id="edit-msg"></div>
+                    <form id="product-form">
+                        <input type="hidden" id="order-id-edit">
+                        <div class="form-inputs">
+                            <label for="img">Client Name:</label>
+                            <input readonly type="text" id="cname">
+                        </div>
+
+                        <div class="form-inputs">
+                            <label for="product-name">Client Email:</label>
+                            <input readonly type="email" id="cemail">
+                            <span class="form-error" id="form-error-name"></span>
+                        </div>
+
+                        <div class="select">
+                            <div class="select-item">
+                                <label for="brand">Payment Method:</label>
+                                <select id="pmethod">
+                                    <option value="cash">Cash</option>
+                                    <option value="card">Credit Card</option>
+                                    <option value="Cheque">Cheque</option>
+                                </select>
+
+                            </div>
+
+                            <div class="select-item">
+                                <label for="status">Total Amount:</label>
+                                <input disabled id="amount" type="text">
+                            </div>
+
+                            <div class="select-item">
+                                <label for="category">Amount To Pay:</label>
+                                <input disabled id="total" type="text">
+
+                            </div>
+
+                        </div>
+
+                        <div class="form-inputs">
+                            <label for="qty">Amount Due:</label>
+                            <input type="number" id="due-amount" >
+                        </div>
+
+                        <div class="button-container">
+                            <button onclick="updateorder()" type="button">Close</button>
+                        </div>
+                    </form>
                 </div>
             </div>
+        </div>
 
         <div class="main-container">
             <div class="boxes">
@@ -130,7 +147,7 @@
                         </div>
 
                         <div class="search">
-                            <input id="search-order" type="text"><button>Search</button>
+                            <input id="search-order" autocomplete="off" type="text"><button>Search</button>
                         </div>
 
                     </div>

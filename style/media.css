@@ -73,9 +73,10 @@
         transition: 1.5s;
     }
 
-    nav .dash .a .active{
+    nav .dash .a .active {
         display: none;
     }
+
     nav .nav-links ul li .btn-arrow img,
     nav .dash button {
         display: none;
@@ -109,7 +110,91 @@
         transition: 1.5s;
     }
 
-    .nav-menu-link .dash .a .active{
+    .nav-menu-link .dash .a .active {
         display: block;
+    }
+
+    /* table design */
+    table {
+        width: 100%;
+    }
+
+    thead th {
+        padding: 5px;
+    }
+
+    table th td {
+        padding: 5px;
+    }
+
+    table td .table-button {
+        gap: 5px;
+        flex-wrap: nowrap;
+    }
+    table td .inactive{
+        flex-wrap: nowrap;
+    }
+
+    table tr td .img{
+        width: 30px;
+        height: 30px;
+    }
+
+    main .url {
+        padding: 10px;
+        font-size: 13px;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+
+        span:nth-child(1) {
+            display: none;
+        }
+
+    }
+
+    .search-container {
+        padding: 5px;
+        justify-content: end;
+        .row {
+            display: none;
+        }
+    }
+    .container-form {
+        width: 100%;
+    }
+
+    .form-container {
+        padding: 10px;
+        border-radius: 0;
+    }
+
+    .select {
+        padding: 5px;
+        flex-wrap: wrap;
+    }
+    
+    .form-container form .form-inputs, .profile-container .form-inputs{
+        padding: 5px;
+    }
+
+    form .select-item select{
+        width: 100%;
+    }
+
+    form .button-container .delete-button{
+        gap: 10px;
+    }
+
+    form .button-container{
+        padding: 5px;
+    }
+    .container-form .brands {
+    width: 100%;
+}
+
+    form .delete-container{
+        margin-top: 3px;
+        padding: 10px;
     }
 }

@@ -27,14 +27,14 @@ const fetchProducts = () => {
                     tableRows += `
                     <tr >
                         <td>${count}</td>
-                         <td><img src="../img/uploads/${product.image}" width="50" height="50" alt="${product.product_name}"></td>
+                         <td><img class="img" src="../img/uploads/${product.image}" width="50" height="50" alt="${product.product_name}"></td>
                         <td>${product.brand_name}</td>
                         <td>${product.category_name}</td>
                         <td>${product.product_name}</td>
                         <td>${formattedPrice}</td>
                         <td>${product.quantity}</td>
                         ${product.quantity > 1 ? `<td><span class="active">Available</span></td>`
-                            : `<td><span class="inactive">Stock Out</span></td>`}
+                            : `<td><span class="inactive">StockOut</span></td>`}
 
                     </tr>
                 `;

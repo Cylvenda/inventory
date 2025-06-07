@@ -3,12 +3,12 @@
 if (isset($_GET['auth'])) {
     session_unset();
     session_destroy();
-    header('Location:' . $inventory_url);
+    header('Location: ../');
     exit();
 } else {
     session_unset();
     session_destroy();
-    header('Location:' . $inventory_url);
+    header('Location: ../');
     exit();
 }
 

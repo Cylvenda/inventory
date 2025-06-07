@@ -28,12 +28,13 @@
         <div class="form">
             <form action="Config/handlers.php" method="POST">
                 <h3>G10 Login</h3>
-                <?php 
-                        if(isset($_SESSION['error'])){
-                            echo $_SESSION['error'];
-                            unset($_SESSION['error']);
-                        }
-                    ?>
+                <?php
+                    if (isset($_SESSION['error'])) {
+                        echo $_SESSION['error'];
+                        unset($_SESSION['error']);
+                        
+                    }
+                ?>
                 <div class="form-content">
                     <label for="email">Email</label>
                     <input type="email" name="email" placeholder="Enter Your Email..">
