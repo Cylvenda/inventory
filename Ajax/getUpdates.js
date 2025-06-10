@@ -28,7 +28,7 @@ $(document).ready(() => {
     $(document).on('click', '#edit-user', function () {
         const userId = $(this).data('id');
         getUserForEdit(userId)
-        $('#edit-msg').html('');
+        $('#msg-edit').html('');
         // alert(user)
     });
 

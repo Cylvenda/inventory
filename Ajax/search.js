@@ -66,7 +66,7 @@ const getSearchProduct = (searchValue) => {
         success: (response) => {
             if (response.productResult && response.productResult.length > 0) {
                 let tableRows = '';
-                let count = 0
+                let count = 0;
 
                 response.productResult.map((product, index) => {
                     const formattedPrice = Number(product.price).toLocaleString('en-US', {
