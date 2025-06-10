@@ -4,4 +4,5 @@
     <title>G10 Inventory Management System</title>
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/media.css">
+        <link rel="shortcut icon" href="../img/one.jpg" type="image/x-icon">
 </head>

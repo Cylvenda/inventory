@@ -133,6 +133,9 @@ nav .nav-links ul li {
         cursor: pointer;
     }
 }
+nav .dash .manager{
+    font-size: 15px;
+}
 
 nav .nav-links ul li button,
 nav .dash button {

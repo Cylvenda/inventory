@@ -9,7 +9,7 @@
                 } elseif ($_SESSION['role'] == 'owner') {
                     echo 'Owner';
                 } elseif ($_SESSION['role'] == 'manager') {
-                    echo 'Manager';
+                    echo '<span class="manager">Manager</span>'; 
                 } else {
                     $_SESSION['error'] = '<div class="msg"><span>System doesnt recognize you as a Owner or Manager</span></div>';
                     header('Location: ../');

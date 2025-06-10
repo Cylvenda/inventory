@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2025 at 07:13 PM
+-- Generation Time: Jun 10, 2025 at 07:34 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -103,8 +103,8 @@ CREATE TABLE IF NOT EXISTS `employee` (
 INSERT INTO `employee` (`employee_id`, `name`, `email`, `phone`, `status`, `date`, `password`, `role`) VALUES
 (1, 'admin', 'admin@g10.com', '255780598902', 1, '2025-05-21 10:21:47', '$2y$10$kIFBmpN82s9Nzyxe9mWPdOzAH3kVDBl5TI86aW1LXTbmIBihPwAI6', 'admin'),
 (2, 'Owner', 'owner@g10.com', '255780598902', 1, '2025-06-04 05:21:17', '$2y$10$DehA6TnYLHmf4yg7C6w37OiaSA0JFHGMakPNZ8VEOVRZVSNEZKU0W', 'owner'),
-(3, 'Saller', 'saller@g10.com', '255655990092', 1, '2025-06-02 13:54:10', '$2y$10$CBqOOqbrdV/n55NJ2NQ9M.j1Tbc33HRIvSBtCLQPAlZ5zPSJeNUa2', 'saller'),
-(4, 'Manager', 'manager@g10.com', '255655990092', 1, '2025-06-04 04:53:35', '$2y$10$v.BQgOSetX1vEPNl4mmVK.8Ah8vDuIshizyZCERtwtYDJ7eyB0CPu', 'manager');
+(19, 'Saller', 'saller@g10.com', '255655990092', 1, '2025-06-02 13:54:10', '$2y$10$CBqOOqbrdV/n55NJ2NQ9M.j1Tbc33HRIvSBtCLQPAlZ5zPSJeNUa2', 'saller'),
+(20, 'Manager', 'manager@g10.com', '255655990092', 1, '2025-06-04 04:53:35', '$2y$10$v.BQgOSetX1vEPNl4mmVK.8Ah8vDuIshizyZCERtwtYDJ7eyB0CPu', 'manager');
 
 -- --------------------------------------------------------
 
@@ -176,12 +176,12 @@ CREATE TABLE IF NOT EXISTS `placed_orders` (
 --
 
 INSERT INTO `placed_orders` (`order_id`, `employee_id`, `client_name`, `client_email`, `client_phone`, `subtotal`, `total_price`, `total_items`, `payed_amount`, `discount`, `payment_method`, `status`, `date`) VALUES
-(6, 3, 'Elline Edecy', 'ellinejohn@gmail.com', '255654611651', '660000', '627000', 11, '627000', '5', 'cash', 0, '2025-05-28 13:27:26'),
-(7, 3, 'Jahseh Lumumba', 'jahsehlumumba@gmail.com', '8573894538946', '220000', '220000', 7, '20000', '0', 'cash', 0, '2025-05-28 13:36:12'),
-(8, 3, 'Mtole Kitale', 'kitalemtole@gmail.com', '8573894538946', '220000', '220000', 7, '1000', '0', 'Cheque', 0, '2025-05-28 13:36:19'),
-(14, 3, 'Byge Kitole', 'bygekitole@gmail.com', '68758', '20000', '20000', 1, '20000', '0', 'cash', 1, '2025-05-28 14:29:37'),
-(16, 3, 'Brayan Mlawa', 'brayan@mlawa.com', '768', '240000', '120000', 4, '150000', '50', 'cash', 0, '2025-05-28 15:40:25'),
-(19, 3, 'oerder', 'hrfj@g10.com', '2245628347258', '22100000', '11050000', 11, '110500000', '50', 'cash', 1, '2025-06-04 19:44:34');
+(6, 1, 'Elline Edecy', 'ellinejohn@gmail.com', '255654611651', '660000', '627000', 11, '627000', '5', 'cash', 0, '2025-05-28 13:27:26'),
+(7, 1, 'Jahseh Lumumba', 'jahsehlumumba@gmail.com', '8573894538946', '220000', '220000', 7, '20000', '0', 'cash', 0, '2025-05-28 13:36:12'),
+(8, 1, 'Mtole Kitale', 'kitalemtole@gmail.com', '8573894538946', '220000', '220000', 7, '1000', '0', 'Cheque', 0, '2025-05-28 13:36:19'),
+(14, 1, 'Byge Kitole', 'bygekitole@gmail.com', '68758', '20000', '20000', 1, '20000', '0', 'cash', 1, '2025-05-28 14:29:37'),
+(16, 1, 'Brayan Mlawa', 'brayan@mlawa.com', '768', '240000', '120000', 4, '150000', '50', 'cash', 0, '2025-05-28 15:40:25'),
+(19, 19, 'oerder', 'hrfj@g10.com', '2245628347258', '22100000', '11050000', 11, '110500000', '50', 'cash', 1, '2025-06-04 19:44:34');
 
 -- --------------------------------------------------------
 
