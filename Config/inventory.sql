@@ -103,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `employee` (
 INSERT INTO `employee` (`employee_id`, `name`, `email`, `phone`, `status`, `date`, `password`, `role`) VALUES
 (1, 'admin', 'admin@g10.com', '255780598902', 1, '2025-05-21 10:21:47', '$2y$10$kIFBmpN82s9Nzyxe9mWPdOzAH3kVDBl5TI86aW1LXTbmIBihPwAI6', 'admin'),
 (2, 'Owner', 'owner@g10.com', '255780598902', 1, '2025-06-04 05:21:17', '$2y$10$DehA6TnYLHmf4yg7C6w37OiaSA0JFHGMakPNZ8VEOVRZVSNEZKU0W', 'owner'),
-(19, 'Saller', 'saller@g10.com', '255655990092', 1, '2025-06-02 13:54:10', '$2y$10$CBqOOqbrdV/n55NJ2NQ9M.j1Tbc33HRIvSBtCLQPAlZ5zPSJeNUa2', 'saller'),
+(19, 'Saler', 'saler@g10.com', '255655990092', 1, '2025-06-02 13:54:10', '$2y$10$CBqOOqbrdV/n55NJ2NQ9M.j1Tbc33HRIvSBtCLQPAlZ5zPSJeNUa2', 'saler'),
 (20, 'Manager', 'manager@g10.com', '255655990092', 1, '2025-06-04 04:53:35', '$2y$10$v.BQgOSetX1vEPNl4mmVK.8Ah8vDuIshizyZCERtwtYDJ7eyB0CPu', 'manager');
 
 -- --------------------------------------------------------
